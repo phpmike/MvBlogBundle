@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Mv\BlogBundle\Entity\AdminBlog\Post;
 use Mv\BlogBundle\Form\AdminBlog\PostType;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Blog\Post controller.
@@ -20,6 +21,7 @@ class PostController extends Controller
     /**
      * Lists all Blog\Post entities.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/", name="badp_post")
      * @Method("GET")
      * @Template()
@@ -38,6 +40,7 @@ class PostController extends Controller
     /**
      * Creates a new Blog\Post entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/", name="badp_post_create")
      * @Method("POST")
      * @Template("MvBlogBundle:AdminBlog\Post:new.html.twig")
@@ -65,6 +68,7 @@ class PostController extends Controller
     /**
      * Displays a form to create a new Blog\Post entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/new", name="badp_post_new")
      * @Method("GET")
      * @Template()
@@ -83,6 +87,7 @@ class PostController extends Controller
     /**
      * Finds and displays a Blog\Post entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}", name="badp_post_show")
      * @Method("GET")
      * @Template()
@@ -108,6 +113,7 @@ class PostController extends Controller
     /**
      * Displays a form to edit an existing Blog\Post entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}/edit", name="badp_post_edit")
      * @Method("GET")
      * @Template()
@@ -135,6 +141,7 @@ class PostController extends Controller
     /**
      * Edits an existing Blog\Post entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}", name="badp_post_update")
      * @Method("PUT")
      * @Template("MvBlogBundle:AdminBlog\Post:edit.html.twig")
@@ -170,6 +177,7 @@ class PostController extends Controller
     /**
      * Deletes a Blog\Post entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}", name="badp_post_delete")
      * @Method("DELETE")
      */
@@ -196,6 +204,7 @@ class PostController extends Controller
     /**
      * Creates a form to delete a Blog\Post entity by id.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @param mixed $id The entity id
      *
      * @return Symfony\Component\Form\Form The form

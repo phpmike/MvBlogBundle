@@ -22,7 +22,7 @@ and add the repositories:
     },   
 ```
 
-2)  Add to your appKernel.php
+2)  Add to your AppKernel.php
 
 ```
 new Mv\BlogBundle\MvBlogBundle(),
@@ -38,13 +38,24 @@ mv_blog:
     prefix:   /
 ```
 
+4)  See Resources/Example/security.yml.example to configure access to the admin panel
+
+This is for dev tests only.
+
+Ensure you have in your AppKernel.php
+
+```
+new JMS\AopBundle\JMSAopBundle(),
+new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+```
+
 Run update with composer
 
 ```
 php path/to/composer.phar update
 ```
 
-4)  Blog is accessible on /blog and Admin panel on /badp/post
+5)  Blog is accessible on /blog and Admin panel on /badp
 
 Enjoy...
 

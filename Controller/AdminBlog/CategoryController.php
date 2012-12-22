@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Mv\BlogBundle\Entity\AdminBlog\Category;
 use Mv\BlogBundle\Form\AdminBlog\CategoryType;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Blog\Category controller.
@@ -20,6 +21,7 @@ class CategoryController extends Controller
     /**
      * Lists all Blog\Category entities.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/", name="badp_category")
      * @Method("GET")
      * @Template()
@@ -38,6 +40,7 @@ class CategoryController extends Controller
     /**
      * Creates a new Blog\Category entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/", name="badp_category_create")
      * @Method("POST")
      * @Template("MvBlogBundle:AdminBlog\Category:new.html.twig")
@@ -65,6 +68,7 @@ class CategoryController extends Controller
     /**
      * Displays a form to create a new Blog\Category entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/new", name="badp_category_new")
      * @Method("GET")
      * @Template()
@@ -83,6 +87,7 @@ class CategoryController extends Controller
     /**
      * Displays a form to edit an existing Blog\Category entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}/edit", name="badp_category_edit")
      * @Method("GET")
      * @Template()
@@ -110,6 +115,7 @@ class CategoryController extends Controller
     /**
      * Edits an existing Blog\Category entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}", name="badp_category_update")
      * @Method("PUT")
      * @Template("MvBlogBundle:AdminBlog\Category:edit.html.twig")
@@ -145,6 +151,7 @@ class CategoryController extends Controller
     /**
      * Deletes a Blog\Category entity.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @Route("/{id}", name="badp_category_delete")
      * @Method("DELETE")
      */
@@ -171,6 +178,7 @@ class CategoryController extends Controller
     /**
      * Creates a form to delete a Blog\Category entity by id.
      *
+     * @Secure(roles="ROLE_ADMIN")
      * @param mixed $id The entity id
      *
      * @return Symfony\Component\Form\Form The form

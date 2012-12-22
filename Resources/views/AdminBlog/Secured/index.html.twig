@@ -1,0 +1,12 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Administration du blog' %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+<h1>{{ page_title }}</h1>
+
+<p>
+Depuis cet espace, vous pouvez gérer vos articles, les catégories du blog, etc...    
+</p>
+{% endblock %}
