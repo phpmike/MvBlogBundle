@@ -1,0 +1,48 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Liste des catégories' %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+<h1>{{ page_title }}</h1>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_category_new') }}">
+            Créer une nouvelle catégorie
+        </a>
+    </li>
+</ul>
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
+            <td>{{ entity.title }}</td>
+            <td>{{ entity.description }}</td>
+            <td>
+                <ul class="records_list_actions">
+                    <li>
+                        <a href="{{ path('badp_category_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_category_new') }}">
+            Créer une nouvelle catégorie
+        </a>
+    </li>
+</ul>
+{% endblock %}

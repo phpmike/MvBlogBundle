@@ -1,0 +1,23 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Liste des catégories' %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+<h1>{{ page_title }}</h1>
+
+<form action="{{ path('badp_category_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Enregistrer</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_category') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

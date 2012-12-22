@@ -1,0 +1,8 @@
+{% extends 'MvBlogBundle::layout.html.twig' %}
+{% set page_title = entity.title %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+{% include "MvBlogBundle:AdminBlog/Post:article.html.twig" %}
+{% endblock %}

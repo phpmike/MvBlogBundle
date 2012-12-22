@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block body %}
+  <div id="mv_blog_page">
+    <div id="mv_blog_menu_left">
+    <ul>
+      <li><a href="{{ path('blog_homepage') }}">Voir mon blog</a></li>
+      <li><a href="{{ path('badp_category') }}">Catégories</a></li>
+      <li><a href="{{ path('badp_post') }}">Articles</a></li>
+    </ul>
+    </div>
+    <div id="mv_blog_body">
+        {% block content_body %}{% endblock %}
+    </div>
+    <div class="clear"></div>
+  </div>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/admin-blog.css') }}" type="text/css" media="all" />
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

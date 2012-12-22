@@ -1,0 +1,57 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Liste des articles' %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+<h1>{{ page_title }}</h1>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_post_new') }}">
+            Créer un nouvel article
+        </a>
+    </li>
+</ul>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Catégories</th>
+            <th>Titre</th>
+            <th>Créé le</th>
+            <th>Modifié le</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
+            <td>{{ entity.categories|join('<br />')|raw }}</td>
+            <td><a href="{{ path('badp_post_show', { 'id': entity.id }) }}">{{ entity.title }}</a></td>
+            <td>{% if entity.created %}{{ entity.created|date('d/m/Y') }}{% endif %}</td>
+            <td>{% if entity.updated %}{{ entity.updated|date('d/m/Y') }}{% endif %}</td>
+            <td>
+                <ul class="records_list_actions">
+                    <li>
+                        <a href="{{ path('badp_post_show', { 'id': entity.id }) }}">Voir</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('badp_post_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_post_new') }}">
+            Créer un nouvel article
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

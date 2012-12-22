@@ -1,0 +1,10 @@
+{% for entity in entities %}
+<div class="mv_blog_article_list {% if loop.index is odd %}odd{% else %}even{% endif %}">
+  <h2><a href="{{ path('blog_post_show', { 'id': entity.id }) }}">{{ entity.title }}</a></h2>
+  <div class="mv_blog_accroche">
+  {{ entity.accroche|raw }}
+    <p class="mv_blog_article_suite"><a href="{{ path('blog_post_show', { 'id': entity.id }) }}">Lire la suite...</a></p>
+  </div>
+  <p class="mv_blog_mention">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }}</p>
+</div>
+{% endfor %}

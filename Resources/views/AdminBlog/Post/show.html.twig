@@ -1,0 +1,22 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Voir ' ~ entity.title %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+{% include "MvBlogBundle:AdminBlog/Post:article.html.twig" %}
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_post') }}">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('badp_post_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Supprimer</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

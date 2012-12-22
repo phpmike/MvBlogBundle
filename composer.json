@@ -1,0 +1,36 @@
+{
+    "name": "mv/mv-blog-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Blog Bundle",
+    "keywords": ["blog"],
+    "homepage": "https://github.com/phpmike/MvBlogBundle",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Michaël VEROUX",
+            "homepage": "https://github.com/phpmike"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/symfony": ">=2.1.0",
+        "jms/security-extra-bundle": "1.2.*",
+        "jms/di-extra-bundle": "1.1.*",
+        "stof/doctrine-extensions-bundle": "1.1.*@dev",
+        "Trsteel/ckeditor-bundle": "*",
+        "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
+        "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev",
+        "knplabs/knp-paginator-bundle": "2.1.*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-0": {
+            "Mv\\BlogBundle": ""
+        }
+    },
+    "target-dir" : "Mv/BlogBundle"
+}

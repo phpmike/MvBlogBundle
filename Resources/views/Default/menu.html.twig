@@ -1,0 +1,6 @@
+<ul>
+    <li><a href="{{ path('blog_homepage') }}">Accueil</a></li>
+    {% for entity in entities %}
+    <li><a href="{{ path('blog_category_list', { 'id': entity.id }) }}">{{ entity.title }}</a></li>
+    {% endfor %}
+</ul>

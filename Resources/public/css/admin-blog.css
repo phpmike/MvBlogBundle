@@ -1,0 +1,147 @@
+root { 
+  display: block;
+}
+
+BODY {
+  background-color: #666;
+}
+
+H1{
+  margin: 0 0 1em 0;
+  font-size: 1.4em;
+}
+
+/******** FORM STYLES *************/
+FORM DIV > LABEL {
+  margin: 10px 0 0 0;
+  font-weight: bold;
+  font-size: 1.1em;
+  display: block;
+}
+
+INPUT[type=text], TEXTAREA {
+  width: 680px;
+  border: 1px solid #ccc;
+  padding: 1px 5px;
+}
+
+UL.record_actions {
+  list-style: none;
+  padding: 6px 10px;
+  background-color: #ddd;
+  border: 1px solid #aaa;
+}
+
+UL.record_actions > LI{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+UL.record_actions > LI A{
+  color: #444;
+  text-decoration: none;
+}
+
+UL.record_actions > LI A:hover{
+  color: #222;
+  text-decoration: underline;
+}
+/**********************************/
+
+/******** LIST STYLES *************/
+TABLE.records_list {
+  width: 100%;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  border: 1px solid #aaa;
+}
+
+TABLE.records_list TH + TH, TABLE.records_list TD + TD {
+  border-left: 1px dotted white;
+}
+
+TABLE.records_list TH, TABLE.records_list TD{
+  padding: 2px 4px;
+  text-align: left;
+}
+
+TABLE.records_list > THEAD > TR {
+  background-color: #444;
+  color: #eee;
+}
+
+TABLE.records_list > TBODY > TR.odd {
+  background-color: #ccc;
+}
+
+TABLE.records_list > TBODY > TR.even {
+  background-color: #ddd;
+}
+
+UL.records_list_actions {
+  list-style: none;
+  padding: 6px 10px;
+  margin: 0;
+}
+
+UL.records_list_actions > LI A{
+  color: #444;
+  text-decoration: none;
+}
+
+UL.records_list_actions > LI A:hover{
+  color: #222;
+  text-decoration: underline;
+}
+/**********************************/
+
+.clear{
+  clear: both;
+}
+
+DIV#mv_blog_page {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+
+DIV#mv_blog_menu_left {
+  width: 240px;
+  padding: 10px;
+  float: left;
+  min-height: 500px;
+  background-color: #303037;
+  color: #eee;
+}
+
+DIV#mv_blog_menu_left UL {
+  list-style: none;
+  padding: 0;
+}
+
+DIV#mv_blog_menu_left UL LI {
+  padding: 6px 10px;
+  border-bottom: 1px solid #aaa;
+}
+
+DIV#mv_blog_menu_left UL > LI A{
+  color: #eee;
+  text-decoration: none;
+}
+
+DIV#mv_blog_menu_left UL > LI A:hover{
+  color: #ccc;
+  text-decoration: underline;
+}
+
+DIV#mv_blog_body {
+  float: left;
+  width: 715px;
+  padding: 10px 10px 10px 15px;
+}
+
+.mv_blog_mention {
+  font-size: 0.9em;
+  color: #aaa;
+  font-style: italic;
+}

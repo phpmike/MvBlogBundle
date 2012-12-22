@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block body %}
+  <div id="mv_blog_page">
+    <div id="mv_blog_menu_left">
+      {% render 'MvBlogBundle:Default:menu' %}
+    </div>
+    <div id="mv_blog_body">
+        {% block content_body %}{% endblock %}
+    </div>
+    <div class="clear"></div>
+  </div>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/blog.css') }}" type="text/css" media="all" />
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

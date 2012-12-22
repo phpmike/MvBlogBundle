@@ -1,0 +1,31 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Modifier la catégorie "' ~ entity.title ~ '"' %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+<h1>{{ page_title }}</h1>
+
+<form action="{{ path('badp_category_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+    <input type="hidden" name="_method" value="PUT" />
+    {{ form_widget(edit_form) }}
+    <p>
+        <button type="submit">Enregistrer</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('badp_category') }}">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('badp_category_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Supprimer</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

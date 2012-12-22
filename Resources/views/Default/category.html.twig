@@ -1,0 +1,9 @@
+{% extends 'MvBlogBundle::layout.html.twig' %}
+{% set page_title = category.title %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+  <h1>{{ page_title }}</h1>
+  {% include "MvBlogBundle:Default:_articleList.html.twig" %}
+{% endblock %}
