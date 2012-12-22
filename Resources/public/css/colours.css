@@ -1,0 +1,30 @@
+BODY {  background-color: #666; }
+INPUT[type=text],
+TEXTAREA {  border: 1px solid #ccc; }
+A{ color: #444; }
+A:hover{ color: #222; }
+
+UL.record_actions { background-color: #ddd; }
+UL.record_actions > LI A,
+UL.records_list_actions > LI A,
+UL.records_list_actions > LI A:hover { color: #444; }
+UL.record_actions > LI A:hover{ color: #222; }
+
+TABLE.records_list { border: 1px solid #aaa; }
+TABLE.records_list TH + TH,
+TABLE.records_list TD + TD { border-left: 1px dotted white; }
+TABLE.records_list > THEAD > TR { background-color: #444; color: #eee; }
+TABLE.records_list > TBODY > TR.odd { background-color: #ccc; }
+TABLE.records_list > TBODY > TR.even { background-color: #ddd; }
+
+DIV#mv_blog_page { background-color: #fdfdfd; }
+
+DIV#mv_blog_menu_left { background-color: #303037; color: #eee; }
+DIV#mv_blog_menu_left UL LI { border-bottom: 1px solid #aaa; }
+DIV#mv_blog_menu_left UL > LI A{ color: #eee; }
+DIV#mv_blog_menu_left UL > LI A:hover{ color: #ccc; }
+
+DIV.mv_blog_article_list.odd { background-color: #f9f9f9; }
+DIV.mv_blog_article_list.even { background-color: #fcfcfc; }
+
+.mv_blog_mention { color: #aaa; }

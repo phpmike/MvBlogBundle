@@ -2,22 +2,16 @@ root {
   display: block;
 }
 
-BODY {
-  background-color: #666;
-}
-
 H1, H2{
   margin: 0 0 0.3em 0;
   font-size: 1.4em;
 }
 
 A{
-  color: #444;
   text-decoration: none;
 }
 
 A:hover{
-  color: #222;
   text-decoration: underline;
 }
 
@@ -29,7 +23,6 @@ A:hover{
 DIV#mv_blog_page {
   width: 1000px;
   margin: 0 auto;
-  background-color: #fdfdfd;
 }
 
 DIV#mv_blog_menu_left {
@@ -37,8 +30,6 @@ DIV#mv_blog_menu_left {
   padding: 10px;
   float: left;
   min-height: 500px;
-  background-color: #303037;
-  color: #eee;
 }
 
 DIV#mv_blog_menu_left UL {
@@ -48,16 +39,13 @@ DIV#mv_blog_menu_left UL {
 
 DIV#mv_blog_menu_left UL LI {
   padding: 6px 10px;
-  border-bottom: 1px solid #aaa;
 }
 
 DIV#mv_blog_menu_left UL > LI A{
-  color: #eee;
   text-decoration: none;
 }
 
 DIV#mv_blog_menu_left UL > LI A:hover{
-  color: #ccc;
   text-decoration: underline;
 }
 
@@ -75,20 +63,11 @@ DIV.mv_blog_article_list {
   padding: 10px 8px 2px 8px;
 }
 
-DIV.mv_blog_article_list.odd {
-  background-color: #f9f9f9;
-}
-
-DIV.mv_blog_article_list.even {
-  background-color: #fcfcfc;
-}
-
 P.mv_blog_article_suite A {
   font-size: 0.9em;
 }
 
 .mv_blog_mention {
   font-size: 0.9em;
-  color: #aaa;
   font-style: italic;
 }
