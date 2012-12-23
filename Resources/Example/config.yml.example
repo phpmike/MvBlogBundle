@@ -1,0 +1,10 @@
+doctrine:
+    orm:
+        filters:
+            softdeleteable:
+                class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                enabled: true   
+
+mv_blog:   
+    # Changer cette adresse par votre adresse
+    robot_email:          test@example.com 

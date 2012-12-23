@@ -71,3 +71,57 @@ P.mv_blog_article_suite A {
   font-size: 0.9em;
   font-style: italic;
 }
+
+/************** Commentaires ***************/
+DIV.mv_blog_commentaire {
+  padding: 4px 6px;  
+}
+
+DIV.mv_blog_commentaire.odd {
+  background-color: #f6f6f6;
+}
+
+DIV.mv_blog_commentaire.even {
+  background-color: #fafafa;
+}
+
+DIV.mv_blog_commentaire P {
+  font-size: 0.9em;
+  margin: 3px 0;
+}
+
+DIV.mv_blog_commentaire P.mv_blog_mention {
+  font-size: 0.8em;
+  margin: 3px 0;
+}
+
+FORM.mv_blog_new_comment FIELDSET {
+  border: 1px solid #ccc;
+  width: auto;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+FORM.mv_blog_new_comment FIELDSET LEGEND {
+  font-size: 0.8em;
+  color: #bbb;  
+}
+
+FORM.mv_blog_new_comment FIELDSET P {
+  margin: 0 7.2em; 
+}
+
+FORM.mv_blog_new_comment LABEL {
+  display: inline-block;
+  font-size: 0.9em;
+  vertical-align: top;
+  width: 8em;
+}
+
+FORM.mv_blog_new_comment INPUT[type=text],
+FORM.mv_blog_new_comment INPUT[type=email],
+FORM.mv_blog_new_comment INPUT[type=url],
+FORM.mv_blog_new_comment TEXTAREA {
+  width: 400px;
+}
+/*******************************************/

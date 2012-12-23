@@ -49,13 +49,25 @@ new JMS\AopBundle\JMSAopBundle(),
 new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 ```
 
+5)  See Resources/Example/config.yml.example
+
+This bundle send mails, a parameter is required for the email from.
+
+Ensure you have in your AppKernel.php
+
+```
+new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+```
+
+6)  Comments are SoftDeleteable, see Resources/Example/config.yml.example
+
 Run update with composer
 
 ```
 php path/to/composer.phar update
 ```
 
-5)  Blog is accessible on /blog and Admin panel on /badp
+7)  Blog is accessible on /blog and Admin panel on /badp
 
 Enjoy...
 

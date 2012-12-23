@@ -1,0 +1,12 @@
+DIV.flash-notice {
+    background-color: #009933;
+    color: #efe;
+    text-align: center;
+    font-size: 0.9em;
+}
+DIV.flash-error {
+    background-color: #AA3333;
+    color: #fee;
+    text-align: center;
+    font-size: 0.9em;
+}

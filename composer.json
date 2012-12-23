@@ -20,7 +20,9 @@
         "Trsteel/ckeditor-bundle": "*",
         "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
         "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev",
-        "knplabs/knp-paginator-bundle": "2.1.*"
+        "knplabs/knp-paginator-bundle": "2.1.*",
+        "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
+        "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev"
     },
     "extra": {
         "branch-alias": {

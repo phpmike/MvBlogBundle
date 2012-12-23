@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block body %}
+    {% for type, flashMessages in app.session.flashbag.all() %}
+        {% for flashMessage in flashMessages %}
+            <div class="flash-{{ type }}">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+    {% endfor %}
   <div id="mv_blog_page">
     <div id="mv_blog_menu_left">
       {% render 'MvBlogBundle:Default:menu' %}
@@ -18,6 +25,7 @@
 
 {% block stylesheets %}
   {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/default.css') }}" type="text/css" media="all" />
   <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/blog.css') }}" type="text/css" media="all" />
   <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/colours.css') }}" type="text/css" media="all" />
 {% endblock %}

@@ -20,9 +20,14 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('mv_blog');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('robot_email')
+                    ->defaultValue('test@example.com')
+                    ->info('Changer cette adresse par votre adresse')
+                ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

@@ -24,5 +24,11 @@
                  <argument type="service" id="annotation_reader" />
             </call>
         </service>
+        <service id="gedmo.listener.softdeleteable" class="Gedmo\SoftDeleteable\SoftDeleteableListener">
+            <tag name="doctrine.event_subscriber" connection="default" />
+            <call method="setAnnotationReader">
+                 <argument type="service" id="annotation_reader" />
+            </call>
+        </service>
     </services>
 </container>

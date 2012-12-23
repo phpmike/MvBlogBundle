@@ -4,6 +4,7 @@ namespace Mv\BlogBundle\Entity\AdminBlog;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Post
@@ -47,6 +48,11 @@ class Post
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="posts", cascade={"persist"})
      */
     private $categories;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+     */
+    private $comments;
 
     /**
      * @var datetime $created
@@ -202,7 +208,7 @@ class Post
      */
     public function __construct()
     {
-        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categories = new ArrayCollection();
     }
     
     /**
@@ -261,5 +267,47 @@ class Post
         if(!$this->publied || (int)$this->publied->format('Y') <= 0)
           return new \DateTime('now');
         return $this->publied;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Mv\BlogBundle\Entity\AdminBlog\Comment $comments
+     * @return Post
+     */
+    public function addComment(\Mv\BlogBundle\Entity\AdminBlog\Comment $comments)
+    {
+        $this->comments[] = $comments;
+    
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Mv\BlogBundle\Entity\AdminBlog\Comment $comments
+     */
+    public function removeComment(\Mv\BlogBundle\Entity\AdminBlog\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+    
+    public function getCommentsPublied(){
+        $entities = new ArrayCollection($this->getComments()->toArray());
+        return $entities->matching(CommentRepository::getPubliedOrderedCriteria())->toArray();
+    }
+
+        public function __toString() {
+        return (string)$this->getTitle();
     }
 }

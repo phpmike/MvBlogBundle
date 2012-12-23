@@ -1,0 +1,37 @@
+{% extends 'MvBlogBundle::admin-layout.html.twig' %}
+{% set page_title = 'Liste des commentaires' %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+{% block content_body %}
+<h1>{{ page_title }}</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Pseudo</th>
+            <th>Email</th>
+            <th>Commentaire</th>
+            <th>Écrit le</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
+            <td>{{ entity.pseudo }}<br />{{ entity.ip }}</td>
+            <td>{{ entity.email }}</td>
+            <td>{{ entity.comment }}</td>
+            <td>{% if entity.created %}{{ entity.created|date('d/m/Y H:i') }}{% endif %}</td>
+            <td>
+                <ul class="records_list_actions">
+                    <li>
+                        <a href="{{ path('badp_comment_edit', { 'id': entity.id }) }}">Modifier</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

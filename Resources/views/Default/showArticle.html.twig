@@ -5,4 +5,20 @@
 
 {% block content_body %}
 {% include "MvBlogBundle:AdminBlog/Post:article.html.twig" %}
+{% for comment in entity.commentsPublied %}
+{% if loop.first %}<a name="blog_comments"></a>{% endif %}
+<div class="mv_blog_commentaire {% if loop.index is odd %}odd{% else %}even{% endif %}">
+    <p class="mv_blog_mention">Le {{ comment.created|date('d/m/Y') }} à {{ comment.created|date('H:i') }}, {{ comment.pseudo }} a écrit :</p>
+    <p>{{ comment.comment }}</p>
+</div>
+{% endfor %}
+<form class="mv_blog_new_comment" action="{{ path('blog_post_comment', { 'id': entity.id }) }}" method="post" {{ form_enctype(form) }}>
+    <fieldset>
+    <legend>Commenter l'article</legend>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Envoyer</button>
+    </p>
+    </fieldset>
+</form>
 {% endblock %}

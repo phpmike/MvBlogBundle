@@ -1,5 +1,7 @@
 BODY {  background-color: #666; }
 INPUT[type=text],
+INPUT[type=email],
+INPUT[type=url],
 TEXTAREA {  border: 1px solid #ccc; }
 A{ color: #444; }
 A:hover{ color: #222; }

@@ -5,6 +5,16 @@
   {{ entity.accroche|raw }}
     <p class="mv_blog_article_suite"><a href="{{ path('blog_post_show', { 'id': entity.id }) }}">Lire la suite...</a></p>
   </div>
-  <p class="mv_blog_mention">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }}</p>
+  {% if entity.commentsPublied|length == 0 %}
+    {% set link_comment = "Il n'y a aucun commentaire pour cet article" %}
+  {% else %}
+    {% set word_comment = " commentaire" %}
+    {% if entity.commentsPublied|length > 1 %}
+        {% set word_comment = word_comment ~ "s" %}
+    {% endif %}
+    {% set link_comment = '<a href="' ~ path('blog_post_show', { 'id': entity.id }) ~ '#blog_comments">' ~ entity.commentsPublied|length ~ word_comment ~ '</a>' %}
+  {% endif %}
+  
+  <p class="mv_blog_mention clear">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }} - {{ link_comment|raw }}</p>
 </div>
 {% endfor %}
