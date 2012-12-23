@@ -8,6 +8,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Mv\BlogBundle\Entity\AdminBlog\Category;
 use Mv\BlogBundle\Entity\AdminBlog\Post;
+use Doctrine\Common\Collections\ArrayCollection;
+use Mv\BlogBundle\Entity\AdminBlog\PostRepository;
 
 /**
  * DefaultController controller.
@@ -36,14 +38,12 @@ class DefaultController extends Controller
      * @Template()
      */
     public function categoryAction(Category $category)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Post')->findByCategoryPubliedOrdered($category->getId());
+    {        
+        $entities = new ArrayCollection( $category->getPosts()->toArray() );
         
         return array(
             'category' => $category,
-            'entities' => $entities,
+            'entities' => $entities->matching(PostRepository::getPubliedOrderedCriteria())->toArray(),
         );
     }
     

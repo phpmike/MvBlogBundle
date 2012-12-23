@@ -34,6 +34,11 @@ class Category
      * @ORM\Column(type="text")
      */
     private $description;
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Post", mappedBy="categories")
+     */
+    private $posts;
 
 
     /**
@@ -98,5 +103,45 @@ class Category
      */
     public function __toString() {
       return (string)$this->getTitle();
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add posts
+     *
+     * @param \Mv\BlogBundle\Entity\AdminBlog\Post $posts
+     * @return Category
+     */
+    public function addPost(\Mv\BlogBundle\Entity\AdminBlog\Post $posts)
+    {
+        $this->posts[] = $posts;
+        
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \Mv\BlogBundle\Entity\AdminBlog\Post $posts
+     */
+    public function removePost(\Mv\BlogBundle\Entity\AdminBlog\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
     }
 }

@@ -18,7 +18,7 @@ class PostRepository extends EntityRepository
      * 
      * @return Criteria
      */
-    protected function _getPubliedOrderedCriteria(){
+    static function getPubliedOrderedCriteria(){
         return  $criteria = Criteria::create()->andWhere(Criteria::expr()->gte('publied', date('Y-m-d H:i:s')))
                                               ->orderBy(array('publied' => Criteria::DESC));
     }
@@ -30,7 +30,7 @@ class PostRepository extends EntityRepository
     public function findAllPubliedOrdered(){        
         $entities = new ArrayCollection($this->findAll());
         
-        return $entities->matching($this->_getPubliedOrderedCriteria())->toArray();
+        return $entities->matching(self::getPubliedOrderedCriteria())->toArray();
     }
     
     public function findByCategoryPubliedOrdered($id){
@@ -43,6 +43,6 @@ class PostRepository extends EntityRepository
                         ->getResult();
         $entities = new ArrayCollection($entities);
         
-        return $entities->matching($this->_getPubliedOrderedCriteria())->toArray();
+        return $entities->matching(self::getPubliedOrderedCriteria())->toArray();
     }
 }

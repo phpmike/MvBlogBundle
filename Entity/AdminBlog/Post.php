@@ -44,7 +44,7 @@ class Post
     private $article;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Category", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="posts", cascade={"persist"})
      */
     private $categories;
 
