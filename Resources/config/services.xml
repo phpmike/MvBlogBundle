@@ -30,5 +30,11 @@
                  <argument type="service" id="annotation_reader" />
             </call>
         </service>
+        <service id="gedmo.listener.tree" class="Gedmo\Tree\TreeListener">
+            <tag name="doctrine.event_subscriber" connection="default" />
+            <call method="setAnnotationReader">
+                 <argument type="service" id="annotation_reader" />
+            </call>
+        </service>
     </services>
 </container>

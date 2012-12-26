@@ -51,6 +51,9 @@ TABLE.records_list TH, TABLE.records_list TD{
   text-align: left;
 }
 
+
+TABLE.records_list > TBODY > TR.mv_blog_sub_category TD:first-child { padding-left: 10px; }
+
 UL.records_list_actions {
   list-style: none;
   padding: 6px 10px;

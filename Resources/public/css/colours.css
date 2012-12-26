@@ -18,11 +18,13 @@ TABLE.records_list TD + TD { border-left: 1px dotted white; }
 TABLE.records_list > THEAD > TR { background-color: #444; color: #eee; }
 TABLE.records_list > TBODY > TR.odd { background-color: #ccc; }
 TABLE.records_list > TBODY > TR.even { background-color: #ddd; }
+TABLE.records_list > TBODY > TR.mv_blog_sub_category.odd { background-color: #e5e5ff; }
+TABLE.records_list > TBODY > TR.mv_blog_sub_category.even { background-color: #eaeaff; }
 
 DIV#mv_blog_page { background-color: #fdfdfd; }
 
 DIV#mv_blog_menu_left { background-color: #303037; color: #eee; }
-DIV#mv_blog_menu_left UL LI { border-bottom: 1px solid #aaa; }
+DIV#mv_blog_menu_left > UL > LI { border-bottom: 1px solid #aaa; }
 DIV#mv_blog_menu_left UL > LI A{ color: #eee; }
 DIV#mv_blog_menu_left UL > LI A:hover{ color: #ccc; }
 

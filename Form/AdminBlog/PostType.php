@@ -5,6 +5,7 @@ namespace Mv\BlogBundle\Form\AdminBlog;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Gedmo\Tree\Entity\Repository\NestedTreeRepository;
 
 class PostType extends AbstractType
 {
@@ -14,7 +15,8 @@ class PostType extends AbstractType
             ->add('title')
             ->add('accroche','ckeditor')
             ->add('article','ckeditor')
-            ->add('categories')
+            ->add('categories', null, array('query_builder' => function(NestedTreeRepository $er){ return $er->getNodesHierarchyQueryBuilder(); },
+                                            'property'      => 'selectRender'))
             ->add('publied')
         ;
     }

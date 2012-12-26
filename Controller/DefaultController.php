@@ -58,7 +58,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Category')->findAll();
+        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Category')->getRootNodes('title');
         
         return array(
             'entities' => $entities,

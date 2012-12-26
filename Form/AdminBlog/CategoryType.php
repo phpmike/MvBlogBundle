@@ -5,6 +5,7 @@ namespace Mv\BlogBundle\Form\AdminBlog;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Gedmo\Tree\Entity\Repository\NestedTreeRepository;
 
 class CategoryType extends AbstractType
 {
@@ -14,6 +15,21 @@ class CategoryType extends AbstractType
             ->add('title')
             ->add('description')
         ;
+        // Peut appartenir à une Root category seulement si c'en est pas déjà une avec des enfants ou si elle est nouvelle
+        // Ne peut pas être un enfant de lui-même
+        if(!$builder->getData()->getId() || !$builder->getData()->getChildren()->count()){
+            $builder
+                    ->add('parent',null,array('query_builder' => function(NestedTreeRepository $er) use ($builder)
+                                                                            {
+                                                                            if(!$builder->getData()->getId())
+                                                                                return $er->getRootNodesQueryBuilder();
+                                                                            else
+                                                                                return $er->getRootNodesQueryBuilder()
+                                                                                            ->andWhere('node.id != :self_id')
+                                                                                            ->setParameter('self_id',$builder->getData()->getId());
+                                                                            }))
+            ;
+        }                                                     
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

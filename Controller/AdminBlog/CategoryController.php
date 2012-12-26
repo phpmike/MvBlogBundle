@@ -30,7 +30,7 @@ class CategoryController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Category')->findAll();
+        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Category')->getRootNodes('title');
 
         return array(
             'entities' => $entities,
@@ -55,6 +55,7 @@ class CategoryController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $this->orderingCategories();
 
             return $this->redirect($this->generateUrl('badp_category', array('id' => $entity->getId())));
         }
@@ -137,7 +138,8 @@ class CategoryController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
-
+            $this->orderingCategories();
+            
             return $this->redirect($this->generateUrl('badp_category'));
         }
 
@@ -189,5 +191,12 @@ class CategoryController extends Controller
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+    
+    private function orderingCategories(){
+        $rootNodes = $this->getDoctrine()->getManager()->getRepository('MvBlogBundle:AdminBlog\Category')->getRootNodes();
+        foreach($rootNodes AS $rootNode){
+            $this->getDoctrine()->getManager()->getRepository('MvBlogBundle:AdminBlog\Category')->reorder($rootNode,'title');
+        }
     }
 }

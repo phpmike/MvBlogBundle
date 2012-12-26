@@ -34,6 +34,19 @@
                 </ul>
             </td>
         </tr>
+        {% for sub in entity.children %}
+            <tr class="mv_blog_sub_category {% if loop.index is odd %}odd{% else %}even{% endif %}">
+                <td>{{ sub.title }}</td>
+                <td>{{ sub.description }}</td>
+                <td>
+                    <ul class="records_list_actions">
+                        <li>
+                            <a href="{{ path('badp_category_edit', { 'id': sub.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
     {% endfor %}
     </tbody>
 </table>
