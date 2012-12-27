@@ -12,6 +12,11 @@
         </a>
     </li>
     <li>
+        <form action="{{ path('badp_post_edit', { 'id': entity.id }) }}" method="get">
+            <button type="submit">Modifier</button>
+        </form>
+    </li>
+    <li>
         <form action="{{ path('badp_post_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}

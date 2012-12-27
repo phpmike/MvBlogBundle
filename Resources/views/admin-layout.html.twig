@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+    {% include "MvBlogBundle::flashes.html.twig" %}    
   <div id="mv_blog_page">
     <div id="mv_blog_menu_left">
     <ul>
@@ -24,6 +25,7 @@
 
 {% block stylesheets %}
   {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/default.css') }}" type="text/css" media="all" />
   <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/admin-blog.css') }}" type="text/css" media="all" />
   <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/colours.css') }}" type="text/css" media="all" />
 {% endblock %}

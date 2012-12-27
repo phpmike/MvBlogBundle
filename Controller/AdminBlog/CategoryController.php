@@ -56,9 +56,11 @@ class CategoryController extends Controller
             $em->persist($entity);
             $em->flush();
             $this->orderingCategories();
+            $this->get('session')->getFlashBag()->add('notice', "Votre catégorie est créée.");
 
             return $this->redirect($this->generateUrl('badp_category', array('id' => $entity->getId())));
         }
+        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
 
         return array(
             'entity' => $entity,
@@ -139,9 +141,11 @@ class CategoryController extends Controller
             $em->persist($entity);
             $em->flush();
             $this->orderingCategories();
+            $this->get('session')->getFlashBag()->add('notice', "Vos modifications ont été enregistrées.");
             
             return $this->redirect($this->generateUrl('badp_category'));
         }
+        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
 
         return array(
             'entity'      => $entity,

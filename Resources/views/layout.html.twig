@@ -5,13 +5,7 @@
 {% endblock %}
 
 {% block body %}
-    {% for type, flashMessages in app.session.flashbag.all() %}
-        {% for flashMessage in flashMessages %}
-            <div class="flash-{{ type }}">
-                {{ flashMessage }}
-            </div>
-        {% endfor %}
-    {% endfor %}
+    {% include "MvBlogBundle::flashes.html.twig" %}
   <div id="mv_blog_page">
     <div id="mv_blog_menu_left">
       {% render 'MvBlogBundle:Default:menu' %}

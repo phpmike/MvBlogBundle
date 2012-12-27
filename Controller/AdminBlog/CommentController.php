@@ -88,9 +88,11 @@ class CommentController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add('notice', "Vos modifications ont été enregistrées.");
 
             return $this->redirect($this->generateUrl('badp_comment'));
         }
+        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
 
         return array(
             'entity'      => $entity,
