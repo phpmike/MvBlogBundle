@@ -13,6 +13,9 @@
         </a>
     </li>
 </ul>
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
 <table class="records_list">
     <thead>
         <tr>
@@ -22,7 +25,7 @@
         </tr>
     </thead>
     <tbody>
-    {% for entity in entities %}
+    {% for entity in pagination %}
         <tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
             <td>{{ entity.title }}</td>
             <td>{{ entity.description }}</td>
@@ -50,6 +53,9 @@
     {% endfor %}
     </tbody>
 </table>
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
 
 <ul class="record_actions">
     <li>

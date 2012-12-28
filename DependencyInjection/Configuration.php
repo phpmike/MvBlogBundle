@@ -26,6 +26,9 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue('test@example.com')
                     ->info('Changer cette adresse par votre adresse')
                 ->end()
+                ->scalarNode('max_per_page')
+                    ->defaultValue(10)
+                ->end()
             ->end()
         ;
 

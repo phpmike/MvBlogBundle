@@ -10,3 +10,15 @@ DIV.flash-error {
     text-align: center;
     font-size: 0.9em;
 }
+DIV.mv_blog_navigation {
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+}
+DIV.mv_blog_navigation SPAN{
+    white-space: normal;
+    padding: 3px;
+    margin: 4px 0;
+    border: 1px solid #bbb;
+    display: inline-block;
+}

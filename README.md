@@ -27,6 +27,7 @@ and add the repositories:
 ```
 new Mv\BlogBundle\MvBlogBundle(),
 new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
+new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 ```
 
 3)  Add to routing.yml

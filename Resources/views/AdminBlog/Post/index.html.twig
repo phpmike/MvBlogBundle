@@ -14,6 +14,9 @@
     </li>
 </ul>
 
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
 <table class="records_list">
     <thead>
         <tr>
@@ -25,7 +28,7 @@
         </tr>
     </thead>
     <tbody>
-    {% for entity in entities %}
+    {% for entity in pagination %}
         <tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
             <td>{{ entity.categories|join('<br />')|raw }}</td>
             <td><a href="{{ path('badp_post_show', { 'id': entity.id }) }}">{{ entity.title }}</a></td>
@@ -45,6 +48,9 @@
     {% endfor %}
     </tbody>
 </table>
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
 
 <ul class="record_actions">
     <li>

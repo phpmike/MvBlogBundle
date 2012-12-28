@@ -7,4 +7,5 @@ doctrine:
 
 mv_blog:   
     # Changer cette adresse par votre adresse
-    robot_email:          test@example.com 
+    robot_email:          test@example.com             
+    max_per_page:         10 

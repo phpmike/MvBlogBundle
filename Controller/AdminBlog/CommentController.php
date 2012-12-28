@@ -30,9 +30,16 @@ class CommentController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('MvBlogBundle:AdminBlog\Comment')->findAll();
+        
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $entities,
+            $this->get('request')->query->get('page', 1)/*page number*/,
+            $this->container->getParameter('mv_blog.max_per_page')/*limit per page*/
+        );       
 
         return array(
-            'entities' => $entities,
+            'pagination' => $pagination
         );
     }
 

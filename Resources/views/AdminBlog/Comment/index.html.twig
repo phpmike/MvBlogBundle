@@ -6,6 +6,9 @@
 {% block content_body %}
 <h1>{{ page_title }}</h1>
 
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
 <table class="records_list">
     <thead>
         <tr>
@@ -17,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-    {% for entity in entities %}
+    {% for entity in pagination %}
         <tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
             <td>{{ entity.pseudo }}<br />{{ entity.ip }}</td>
             <td>{{ entity.email }}</td>
@@ -34,4 +37,7 @@
     {% endfor %}
     </tbody>
 </table>
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
 {% endblock %}

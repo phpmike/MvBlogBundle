@@ -1,4 +1,4 @@
-{% for entity in entities %}
+{% for entity in pagination %}
 <div class="mv_blog_article_list {% if loop.index is odd %}odd{% else %}even{% endif %}">
   <h2><a href="{{ path('blog_post_show', { 'id': entity.id }) }}">{{ entity.title }}</a></h2>
   <div class="mv_blog_accroche">
@@ -18,3 +18,6 @@
   <p class="mv_blog_mention clear">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }} - {{ link_comment|raw }}</p>
 </div>
 {% endfor %}
+<div class="mv_blog_navigation">
+    {{ pagination.render()|raw }}
+</div>
