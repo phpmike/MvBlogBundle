@@ -9,3 +9,15 @@ mv_blog:
     # Changer cette adresse par votre adresse
     robot_email:          test@example.com             
     max_per_page:         10 
+
+    # Durée minimum entre 2 commentaires (en secondes)
+    min_elapsed_time_comment:  10 
+
+    # Hébergeurs de mails temporaires
+    hosts_tmp_mail:       
+        - jetable.org
+        - yopmail.com
+        - mail-temporaire.fr
+        - get2mail.fr
+        - courrieltemporaire.com
+        - mailcatch.com

@@ -1,5 +1,9 @@
 {% extends '::base.html.twig' %}
 
+{% if form is defined %}
+{% form_theme form 'MvBlogBundle::form_div_layout.html.twig' %}
+{% endif %}
+
 {% block title %}
     Blog{% if app.request.get('page') > 1 %} (page {{ app.request.get('page') }}){% endif %}
 {% endblock %}

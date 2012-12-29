@@ -105,6 +105,11 @@ class DefaultController extends Controller
      * @Template("MvBlogBundle:Default:showArticle.html.twig")
      */
     public function addCommentAction(Post $entity, Request $request){
+        // Si le précédent commentaire est trop récent, on vire le client !
+        $last_comment = $this->getDoctrine()->getManager()->getRepository('MvBlogBundle:AdminBlog\Comment')->findOneByIpLast( $this->getRequest()->getClientIp() );
+        if($last_comment && (date('U') - $last_comment->getCreated()->format('U') < $this->container->getParameter('mv_blog.min_elapsed_time_comment')))
+            throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(); // changer peut-être par quelque chose de plus ortodoxe...
+        
         $comment  = new Comment();
         $comment->setPost($entity);
         $form = $this->createForm(new CommentType(), $comment);

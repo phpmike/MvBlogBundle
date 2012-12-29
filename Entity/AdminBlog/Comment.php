@@ -5,12 +5,13 @@ namespace Mv\BlogBundle\Entity\AdminBlog;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints AS Assert;
+use Mv\BlogBundle\Validator\Constraints AS MvAssert;
 
 /**
  * Comment
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Mv\BlogBundle\Entity\AdminBlog\CommentRepository")
  * @Gedmo\SoftDeleteable(fieldName="deleted")
  */
 class Comment
@@ -38,7 +39,8 @@ class Comment
      *
      * @ORM\Column(type="string", length=200)
      * @Assert\NotBlank
-     * @Assert\Email
+     * @Assert\Email(checkHost = true)
+     * @MvAssert\NoTmpMail
      */
     private $email;
     
@@ -56,6 +58,7 @@ class Comment
      * @ORM\Column(type="string", length=40)
      * @Assert\NotBlank
      * @Assert\Ip(version="all")
+     * @MvAssert\ClientIp
      */
     private $ip;
 

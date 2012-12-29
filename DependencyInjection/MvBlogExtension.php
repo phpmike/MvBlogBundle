@@ -26,6 +26,8 @@ class MvBlogExtension extends Extension
         $loader->load('services.xml');
         
         $container->setParameter('mv_blog.robot_email', $config['robot_email']);  
-        $container->setParameter('mv_blog.max_per_page', $config['max_per_page']);      
+        $container->setParameter('mv_blog.max_per_page', $config['max_per_page']);    
+        $container->setParameter('mv_blog.hosts_tmp_mail', $config['hosts_tmp_mail']);
+        $container->setParameter('mv_blog.min_elapsed_time_comment', $config['min_elapsed_time_comment']);   
     }
 }

@@ -30,6 +30,19 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue(10)
                 ->end()
             ->end()
+            ->children()
+                ->scalarNode('min_elapsed_time_comment')
+                    ->defaultValue(10)
+                    ->info('Durée minimum entre 2 commentaires (en secondes)')
+                ->end()
+            ->end()
+            ->children()
+                ->arrayNode('hosts_tmp_mail')
+                ->prototype('scalar')->end()
+                    ->defaultValue(array('jetable.org','yopmail.com','mail-temporaire.fr','get2mail.fr','courrieltemporaire.com','mailcatch.com'))
+                    ->info('Hébergeurs de mails temporaires')
+                ->end()
+            ->end()
         ;
 
         return $treeBuilder;
