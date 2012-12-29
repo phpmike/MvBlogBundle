@@ -1,0 +1,22 @@
+{#
+Surcharge this template in app/Resources/MvBlogBundle/views/base.layout.html.twig if needed
+#}
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Blog
+{% endblock %}
+    
+{% block body %}
+    {% block blog_body %}{% endblock %} 
+{% endblock %}    
+
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/default.css') }}" type="text/css" media="all" />
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/blog.css') }}" type="text/css" media="all" />
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/colours.css') }}" type="text/css" media="all" />
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

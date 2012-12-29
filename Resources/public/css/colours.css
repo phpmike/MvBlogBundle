@@ -23,10 +23,10 @@ TABLE.records_list > TBODY > TR.mv_blog_sub_category.even { background-color: #e
 
 DIV#mv_blog_page { background-color: #fdfdfd; }
 
-DIV#mv_blog_menu_left { background-color: #303037; color: #eee; }
+DIV#mv_blog_menu_left { background-color: inherit; color: #555; }
 DIV#mv_blog_menu_left > UL > LI { border-bottom: 1px solid #aaa; }
-DIV#mv_blog_menu_left UL > LI A{ color: #eee; }
-DIV#mv_blog_menu_left UL > LI A:hover{ color: #ccc; }
+DIV#mv_blog_menu_left UL > LI A{ color: inherit; }
+DIV#mv_blog_menu_left UL > LI A:hover{ color: #aaa; }
 
 DIV.mv_blog_article_list.odd { background-color: #f9f9f9; }
 DIV.mv_blog_article_list.even { background-color: #fcfcfc; }

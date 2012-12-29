@@ -1,14 +1,14 @@
-{% extends '::base.html.twig' %}
+{% extends 'MvBlogBundle::base.layout.html.twig' %}
 
 {% if form is defined %}
 {% form_theme form 'MvBlogBundle::form_div_layout.html.twig' %}
 {% endif %}
 
 {% block title %}
-    Blog{% if app.request.get('page') > 1 %} (page {{ app.request.get('page') }}){% endif %}
+    {{ parent() }}{% if app.request.get('page') > 1 %} (page {{ app.request.get('page') }}){% endif %}
 {% endblock %}
 
-{% block body %}
+{% block blog_body %}
     {% include "MvBlogBundle::flashes.html.twig" %}
   <div id="mv_blog_page">
     <div id="mv_blog_menu_left">
