@@ -20,6 +20,10 @@ class SecuredController extends Controller
      */
     public function loginAction()
     {
+        // This basic login method is for dev only!
+        if($this->container->get('kernel')->getEnvironment() !== 'dev')
+            throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException();
+        
         if ($this->get('request')->attributes->has(SecurityContext::AUTHENTICATION_ERROR)) {
             $error = $this->get('request')->attributes->get(SecurityContext::AUTHENTICATION_ERROR);
         } else {

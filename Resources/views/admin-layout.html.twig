@@ -1,14 +1,14 @@
-{% extends '::base.html.twig' %}
+{% extends 'MvBlogBundle::base.admin-layout.html.twig' %}
 
 {% if form is defined %}
 {% form_theme form 'MvBlogBundle::form_div_layout.html.twig' %}
 {% endif %}
 
 {% block title %}
-    Blog
+    {{ parent() }}{% if app.request.get('page') > 1 %} (page {{ app.request.get('page') }}){% endif %}
 {% endblock %}
 
-{% block body %}
+{% block blog_body %}
     {% include "MvBlogBundle::flashes.html.twig" %}    
   <div id="mv_blog_page">
     <div id="mv_blog_menu_left">
@@ -17,7 +17,7 @@
       <li><a href="{{ path('badp_category') }}">Catégories</a></li>
       <li><a href="{{ path('badp_post') }}">Articles</a></li>
       <li><a href="{{ path('badp_comment') }}">Commentaires</a></li>
-      <li><a href="{{ path('_badp_logout') }}">Déconnexion</a></li>
+      <li>{% include "MvBlogBundle::_logout-link.html.twig" %}</li>
     </ul>
     </div>
     <div id="mv_blog_body">
@@ -25,14 +25,4 @@
     </div>
     <div class="clear"></div>
   </div>
-{% endblock %}
-
-{% block stylesheets %}
-  {{ parent() }}
-  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/default.css') }}" type="text/css" media="all" />
-  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/admin-blog.css') }}" type="text/css" media="all" />
-  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/colours.css') }}" type="text/css" media="all" />
-{% endblock %}
-{% block javascripts %}
-
 {% endblock %}

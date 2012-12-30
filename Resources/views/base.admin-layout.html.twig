@@ -1,10 +1,10 @@
 {#
-Surcharge this template in app/Resources/MvBlogBundle/views/base.layout.html.twig if needed
+Surcharge this template in app/Resources/MvBlogBundle/views/base.admin-layout.html.twig if needed
 #}
 {% extends '::base.html.twig' %}
 
 {% block title %}
-    Blog
+    Admin Blog
 {% endblock %}
     
 {% block body %}
@@ -14,7 +14,7 @@ Surcharge this template in app/Resources/MvBlogBundle/views/base.layout.html.twi
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/default.css') }}" type="text/css" media="all" />
-  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/blog.css') }}" type="text/css" media="all" />
+  <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/admin-blog.css') }}" type="text/css" media="all" />
   <link rel="stylesheet" href="{{ asset('bundles/mvblog/css/colours.css') }}" type="text/css" media="all" />
 {% endblock %}
 {% block javascripts %}
