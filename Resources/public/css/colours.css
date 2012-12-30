@@ -5,6 +5,7 @@ INPUT[type=url],
 TEXTAREA {  border: 1px solid #ccc; }
 A{ color: #444; }
 A:hover{ color: #222; }
+PRE { background-color: #fcfcfc; border: 1px solid #EEEEEE; }
 
 UL.record_actions { background-color: #ddd; }
 UL.record_actions > LI A,

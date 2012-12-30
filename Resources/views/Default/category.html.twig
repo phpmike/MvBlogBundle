@@ -1,6 +1,10 @@
 {% extends 'MvBlogBundle::layout.html.twig' %}
 {% set page_title = category.title %}
 
+{% if category.parent %}
+    {% set page_title = category.parent.title ~ " : " ~ page_title %}
+{% endif %}
+
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 
 {% block content_body %}

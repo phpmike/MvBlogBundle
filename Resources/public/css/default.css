@@ -27,3 +27,6 @@ FORM UL.mv_blog_error {
     padding-left: 14px;
     color: #A33;
 }
+PRE { font-size: 0.8em; font-size: 0.8em; padding: 3px; }
+DIV.mv_blog_accroche A, DIV#mv_blog_article A { text-decoration: underline; }
+DIV.mv_blog_accroche A:hover, DIV#mv_blog_article A:hover { text-decoration: none; }
