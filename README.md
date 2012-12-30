@@ -11,15 +11,10 @@ Blog Bundle for symfony2 v2.1 &amp; v2.2
 "mv/mv-blog-bundle": "0.1.*",
 ``` 
 
-and add the repositories:
+and add the min dev stability:
 
 ```
-    "repositories": {
-        "MvBlog": {
-            "type": "git",
-            "url": "git://github.com/phpmike/MvBlogBundle.git"
-        }
-    },   
+"minimum-stability": "dev" ,  
 ```
 
 2)  Add to your AppKernel.php
