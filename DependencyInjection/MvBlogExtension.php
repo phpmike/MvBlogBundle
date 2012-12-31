@@ -29,5 +29,6 @@ class MvBlogExtension extends Extension
         $container->setParameter('mv_blog.max_per_page', $config['max_per_page']);    
         $container->setParameter('mv_blog.hosts_tmp_mail', $config['hosts_tmp_mail']);
         $container->setParameter('mv_blog.min_elapsed_time_comment', $config['min_elapsed_time_comment']);   
+        $container->setParameter('mv_blog.menu_display_accueil', $config['menu_display_accueil']);   
     }
 }

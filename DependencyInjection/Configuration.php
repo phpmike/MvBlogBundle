@@ -43,6 +43,12 @@ class Configuration implements ConfigurationInterface
                     ->info('Hébergeurs de mails temporaires')
                 ->end()
             ->end()
+            ->children()
+                ->booleanNode('menu_display_accueil')
+                    ->defaultValue(true)
+                    ->info('Affiche le lien vers l\'accueil dans le menu')
+                ->end()
+            ->end()
         ;
 
         return $treeBuilder;

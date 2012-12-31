@@ -76,6 +76,7 @@ class DefaultController extends Controller
         
         return array(
             'entities' => $entities,
+            'home_link' => $this->container->getParameter('mv_blog.menu_display_accueil'),
         );
     }
 

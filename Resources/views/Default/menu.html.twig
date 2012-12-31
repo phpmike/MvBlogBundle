@@ -1,5 +1,7 @@
 <ul>
+    {% if home_link %}
     <li><a href="{{ path('blog_homepage') }}">Accueil</a></li>
+    {% endif %}
     {% for entity in entities %}
     <li><a href="{{ path('blog_category_list', { 'id': entity.id }) }}">{{ entity.title }}</a>
         {% for children in entity.children %}
