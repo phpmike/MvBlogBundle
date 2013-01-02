@@ -5,17 +5,21 @@ Blog Bundle for symfony2 v2.1 &amp; v2.2
 
 ## INSTALLATION with COMPOSER 
 
+You need have installed Symfony2 with Composer or have a composer.json file
+
 1)  Add to composer.json to the `require` key  
 
 ``` 
-"mv/mv-blog-bundle": "0.1.*",
+"mv/mv-blog-bundle": "1.0.*",
+"Trsteel/ckeditor-bundle": "master@dev"
 ``` 
+The second requirement here because only dev version available for Symfony 2.1 and composer won't install with alpha minimal stability
 
-and add the min dev stability:
-
-```
-"minimum-stability": "dev" ,  
-```
+you need also have the root key:
+``` 
+"minimum-stability": "alpha",
+``` 
+Because this is an alpha version
 
 2)  Add to your AppKernel.php
 
@@ -78,6 +82,10 @@ You can also surcharge base.admin-layout.html.twig & base.layout.html.twig to ch
 ex:
 ```
 app/console doctrine:schema:update
+```
+or to have dump sql:
+```
+app/console doctrine:schema:update --dump-sql
 ```
 
 9)  Blog is accessible on /blog and Admin panel on /badp
