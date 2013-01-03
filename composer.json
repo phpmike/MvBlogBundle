@@ -25,6 +25,11 @@
         "Trsteel/ckeditor-bundle": "master@dev"
     },
     "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
     "autoload": {
         "psr-0": {
             "Mv\\BlogBundle": ""
