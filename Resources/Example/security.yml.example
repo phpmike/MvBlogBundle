@@ -30,3 +30,7 @@ security:
             logout:
                 path:   /badp/logout
                 target: /blog/
+
+    access_control:
+        - { path: ^/efconnect, role: ROLE_ADMIN }
+        - { path: ^/elfinder, role: ROLE_ADMIN }

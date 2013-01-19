@@ -12,3 +12,7 @@ web/bundles/*
 app/config/parameters.ini
 app/config/parameters.yml
 /nbproject
+
+# Assets
+/Resources/public/images/*
+!/Resources/public/images/index.php

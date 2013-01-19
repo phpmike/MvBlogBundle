@@ -1,0 +1,34 @@
+fm_elfinder:
+    locale: %locale%
+    editor: ckeditor
+    showhidden: false
+    connector:
+        debug: false
+        roots:
+            uploads:
+                driver: LocalFileSystem
+                path: bundles/mvblog/images
+                upload_allow: ['image/png', 'image/jpg', 'image/jpeg']
+                upload_deny: ['all']
+                upload_max_size: 2M
+                
+trsteel_ckeditor:
+    filebrowser_browse_url:
+        route: elfinder
+        route_parameters:
+            mode: file  
+    filebrowser_image_browse_url:
+        route: elfinder
+        route_parameters:
+            mode: image 
+
+# Assetic Configuration
+assetic:
+    bundles:        [FMElfinderBundle]
+    
+doctrine:
+    orm:
+        filters:
+            softdeleteable:
+                class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                enabled: true              

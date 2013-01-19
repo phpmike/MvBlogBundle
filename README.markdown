@@ -7,6 +7,7 @@ Features include:
 
 - Categories with 1 level sub category
 - Article writing with ckEditor (ckEditor provided by Trsteel/ckeditor-bundle)
+- Picture upload and management with resizing, croping and rotate (integrated in ckEditor and provided by helios-ag/fm-elfinder-bundle)
 - Comments management with email confirmation to publish
 - Time between 2 comments from same IP is parametrable
 - Validator to exclude comments from email who's have host in parametrable black list (ex: temporary mails)
@@ -19,9 +20,10 @@ You need have installed Symfony2 with Composer or have a composer.json file
 ###1)  Add to composer.json in the root `require` key  
 
     "mv/mv-blog-bundle": "1.0.*",
-    "Trsteel/ckeditor-bundle": "master@dev"
+    "Trsteel/ckeditor-bundle": "master@dev",
+    "helios-ag/fm-elfinder-bundle": "dev-master"
 
-The second requirement here because only dev version available for Symfony 2.1 and composer won't install with alpha minimal stability
+The second & third requirement here because only dev version available for Symfony 2.1 and composer won't install with alpha minimal stability
 
 you need also have the root key:
 
@@ -34,13 +36,12 @@ Because this is an alpha version
     new Mv\BlogBundle\MvBlogBundle(),
     new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
     new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+    new FM\ElfinderBundle\FMElfinderBundle(),
 
-3)  Add to routing.yml
-
+###3)  Add to routing.yml
+ 
     mv_blog:
-        resource: "@MvBlogBundle/Controller/"
-        type:     annotation
-        prefix:   /
+        resource: "@MvBlogBundle/Resources/config/routing.yml"
 
 ###4)  See `Resources/Example/security.yml.example` to configure access to the admin panel
 
@@ -59,7 +60,12 @@ Ensure you have in your AppKernel.php
 
     new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
 
-###6)  Comments are SoftDeleteable, see `Resources/Example/config.yml.example`
+###6)  Import config bundle in your config.yml
+
+    imports:
+        - { resource: "@MvBlogBundle/Resources/config/config.yml" }
+
+**Be carrefull, may be you have already the "imports" key**
 
 Run update with composer
 
@@ -86,6 +92,8 @@ or to have dump sql:
     app/console doctrine:schema:update --dump-sql
 
 ###9)  Blog is accessible on /blog and Admin panel on /badp
+
+**If you have an error when you try to access to image management, ensure your web/bundles/mvblog/images is writable by server**
 
 Enjoy...
 
