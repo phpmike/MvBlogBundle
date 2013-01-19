@@ -72,6 +72,14 @@ Run update with composer
 
     php path/to/composer.phar update
 
+Dump assetic (for production)
+    
+    php app/console assetic:dump
+
+**In future it will be (Symfony 2.2) this script in composer.json**
+
+    "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::dumpAssetic"
+
 ###7)  You have to implement (if you don't have yet) an user management
 
 You have access to admin panel in dev mode to see it, but you can't keep it in production mode.
