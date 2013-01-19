@@ -32,6 +32,14 @@ you need also have the root key:
 
 Because this is an alpha version
 
+**I deeply recommend to use symlinks for assets to non expose your images to be deleted**
+
+You can do it by adding this option to your "extra" key in composer.json
+
+    "symfony-assets-install": "symlink"
+
+*If you are using an exotic OS like Windows who don't support this option, you are wrong, framework made for you is .NET*
+
 ###2)  Add to your AppKernel.php
 
     new Mv\BlogBundle\MvBlogBundle(),
