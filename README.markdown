@@ -21,7 +21,8 @@ You need have installed Symfony2 with Composer or have a composer.json file
 
     "mv/mv-blog-bundle": "1.0.*",
     "Trsteel/ckeditor-bundle": "master@dev",
-    "helios-ag/fm-elfinder-bundle": "dev-master"
+    "helios-ag/fm-elfinder-bundle": "dev-master",
+    "helios-ag/fm-elfinder": "2.x-dev"
 
 The second & third requirement here because only dev version available for Symfony 2.1 and composer won't install with alpha minimal stability
 
