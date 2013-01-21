@@ -16,3 +16,6 @@ app/config/parameters.yml
 # Assets
 /Resources/public/images/*
 !/Resources/public/images/index.php
+
+# Dolphin
+.directory

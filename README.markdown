@@ -3,6 +3,8 @@ MvBlogBundle
 
 Blog Bundle for symfony2 v2.1 &amp; v2.2
 
+[![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
+
 Features include:
 
 - Categories with 1 level sub category
