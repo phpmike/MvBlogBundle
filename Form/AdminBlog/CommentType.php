@@ -24,14 +24,14 @@ class CommentType extends AbstractType
         $builder
             ->add('pseudo')
             ->add('email')
-            ->add('web')
+            ->add('web', null, array('label' => 'Site web'))
             ->add('ip','hidden')
-            ->add('comment')
+            ->add('comment', null, array('label' => 'Commentaire'))
         ;
         if($this->usage === 'admin'){
             $builder->add('token')
                     ->add('ip')
-                    ->add('publied')
+                    ->add('publied', null, array('label' => 'Publié le'))
             ;
         }
     }

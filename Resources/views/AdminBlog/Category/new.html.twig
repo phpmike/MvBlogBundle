@@ -8,10 +8,6 @@
 
 <form action="{{ path('badp_category_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
-    <p>
-        <button type="submit">Enregistrer</button>
-    </p>
-</form>
 
 <ul class="record_actions">
     <li>
@@ -19,5 +15,7 @@
             Retour à la liste
         </a>
     </li>
+    <li><button type="submit">Enregistrer</button></li>
 </ul>
+</form>
 {% endblock %}
