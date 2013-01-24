@@ -6,8 +6,9 @@
 {% block content_body %}
 <h1>{{ page_title }}</h1>
 
-<form action="{{ path('badp_comment_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+<form name="comment_edit" action="{{ path('badp_comment_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     {{ form_widget(edit_form) }}
+</form>
 
 <ul class="record_actions">
     <li>
@@ -15,7 +16,7 @@
             Retour à la liste
         </a>
     </li>
-    <li><button type="submit">Enregistrer</button></li>
+    <li><button type="button" onclick="forms.comment_edit.submit();">Enregistrer</button></li>
     <li>
         <form action="{{ path('badp_comment_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
@@ -23,5 +24,4 @@
         </form>
     </li>
 </ul>
-</form>
 {% endblock %}

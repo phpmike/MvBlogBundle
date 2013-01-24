@@ -8,7 +8,6 @@
 
 <form action="{{ path('badp_post_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
-</form>
 
 <ul class="record_actions">
     <li>
@@ -18,4 +17,5 @@
     </li>
     <li><button type="submit">Enregistrer</button></li>
 </ul>
+</form>
 {% endblock %}

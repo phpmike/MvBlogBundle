@@ -6,9 +6,10 @@
 {% block content_body %}
 <h1>{{ page_title }}</h1>
 
-<form action="{{ path('badp_post_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+<form name="post_edit" action="{{ path('badp_post_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
     <input type="hidden" name="_method" value="PUT" />
     {{ form_widget(edit_form) }}
+</form>
 
 <ul class="record_actions">
     <li>
@@ -16,7 +17,7 @@
             Retour à la liste
         </a>
     </li>
-    <li><button type="submit">Enregistrer</button></li>
+    <li><button type="button" onclick="forms.post_edit.submit();">Enregistrer</button></li>
     <li>
         <form action="{{ path('badp_post_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
@@ -25,5 +26,4 @@
         </form>
     </li>
 </ul>
-</form>
 {% endblock %}
