@@ -328,10 +328,19 @@ class Post
     }
     
     public function getRoutingParams(){
+        $category = $this->getCategories()->get(0);
+        
+        // We should prefer sub categorie to be as default
+        foreach($this->getCategories() AS $object){
+            if($object->getParent()){
+                $category = $object;
+                break;
+            }
+        }
         
         return array(   'id'        => $this->getId(),
                         'slug'      => $this->getSlug(),
-                        'category_id'  => $this->getCategories()->get(0)->getId(),
-                        'category'  => $this->getCategories()->get(0)->getSlug());
+                        'category_id'  => $category->getId(),
+                        'category'  => $category->getSlug());
     }
 }

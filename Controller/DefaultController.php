@@ -45,7 +45,7 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/{id}-{slug}/", name="blog_category_list")
+     * @Route("/{id}-{slug}/", requirements={"slug" = "[a-z0-9\-]+", "id" = "^\d+$" }, name="blog_category_list")
      * @Route("/category/{id}")
      * @Template()
      */
