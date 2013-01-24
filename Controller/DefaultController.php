@@ -45,11 +45,15 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/category/{id}", name="blog_category_list")
+     * @Route("/{id}-{slug}/", name="blog_category_list")
+     * @Route("/category/{id}")
      * @Template()
      */
     public function categoryAction(Category $category)
-    {        
+    {
+        if($this->get('request')->get('slug') != $category->getSlug())
+            return $this->redirect($this->generateUrl('blog_category_list', $category->getRoutingParams()));
+        
         $entities = new ArrayCollection( $category->getPosts()->toArray() );
         
         $paginator = $this->get('knp_paginator');
@@ -83,18 +87,25 @@ class DefaultController extends Controller
     /**
      * Finds and displays a Blog\Post entity.
      *
-     * @Route("/article/{id}", name="blog_post_show")
+     * @Route("/{category_id}-{category}/{id}-{slug}.html", requirements={"slug" = "[a-z0-9\-]+", "category" = "[a-z0-9\-]+", "id" = "^\d+$", "category_id" = "^\d+$" }, name="blog_post_show")
+     * @Route("/article/{id}")
      * @Method("GET")
      * @Template()
      */
-    public function showArticleAction(Post $entity)
+    public function showArticleAction(Post $post)
     {
+        $routing_params = $post->getRoutingParams();
+        unset($routing_params['id']);
+        foreach ($routing_params AS $key => $value)
+            if($this->get('request')->get($key) != $value)
+                return $this->redirect($this->generateUrl('blog_post_show', $post->getRoutingParams()));
+        
         $comment = new Comment();
         $comment->setIp($this->getRequest()->getClientIp());
         $form   = $this->createForm(new CommentType(), $comment);
         
         return array(
-            'entity'      => $entity,
+            'entity'      => $post,
             'form'        => $form->createView()
         );
     }
@@ -129,7 +140,7 @@ class DefaultController extends Controller
                 ->setTo($comment->getEmail())
                 ->setBody($this->renderView('MvBlogBundle:Default/Mail:confirm-comment.txt.twig',
                                             array(  'message'       => $comment->getComment(),
-                                                    'url_article'   => $this->generateUrl('blog_post_show', array('id' => $entity->getId()),true),
+                                                    'url_article'   => $this->generateUrl('blog_post_show', $entity->getRoutingParams(),true),
                                                     'url'           => $this->generateUrl('blog_post_comment_confirm', array('email' => $comment->getEmail(), 'token' => $comment->getToken()), true))))
             ;
             $this->get('mailer')->send($message);
@@ -137,7 +148,7 @@ class DefaultController extends Controller
             $this->get('session')->getFlashBag()->add('notice', "Votre commentaire est enregistré.");
             $this->get('session')->getFlashBag()->add('notice', "Vous allez recevoir un message vous demandant de confirmer sa publication.");
     
-            return $this->redirect($this->generateUrl('blog_post_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('blog_post_show', $entity->getRoutingParams()));
         }
         
         return array(
@@ -166,7 +177,7 @@ class DefaultController extends Controller
             }else
                 $this->get('session')->getFlashBag()->add('error', "Votre commentaire a déjà été confirmé !");
                 
-            return $this->redirect($this->generateUrl('blog_post_show', array('id' => $comment->getPost()->getId())));
+            return $this->redirect($this->generateUrl('blog_post_show', $comment->getPost()->getRoutingParams()));
         }
         
         throw new HttpException(401,'Unauthorized access.');

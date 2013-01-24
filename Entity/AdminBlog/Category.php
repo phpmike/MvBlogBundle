@@ -342,4 +342,19 @@ class Category
             return sprintf('> %s',(string)$this);
         return (string)$this;
     }
+    
+    public function getSlug(){
+        $match = array();
+        preg_match_all('#(\b[a-z0-9]{3,}\b)#', strtolower($this->getTitle()), $match);
+        
+        if(!isset($match[1]) || !count($match[1]))
+            return 'categorie';
+        
+        return implode('-', array_slice($match[1], 0, 3));
+    }
+    
+    public function getRoutingParams(){
+        return array(   'id'    => $this->getId(),
+                        'slug'  => $this->getSlug());
+    }
 }

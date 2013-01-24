@@ -3,10 +3,10 @@
     <li><a href="{{ path('blog_homepage') }}">Accueil</a></li>
     {% endif %}
     {% for entity in entities %}
-    <li><a href="{{ path('blog_category_list', { 'id': entity.id }) }}">{{ entity.title }}</a>
+    <li><a href="{{ path('blog_category_list', entity.routingParams ) }}">{{ entity.title }}</a>
         {% for children in entity.children %}
             {% if loop.first %}<ul>{% endif %}
-                <li><a href="{{ path('blog_category_list', { 'id': children.id }) }}">{{ children.title }}</a></li>
+                <li><a href="{{ path('blog_category_list', children.routingParams ) }}">{{ children.title }}</a></li>
             {% if loop.last %}</ul>{% endif %}
         {% endfor %}
     </li>

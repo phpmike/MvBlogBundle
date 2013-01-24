@@ -5,6 +5,7 @@ namespace Mv\BlogBundle\Entity\AdminBlog;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints AS Assert;
 
 /**
  * Post
@@ -45,7 +46,12 @@ class Post
     private $article;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="posts", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Category", inversedBy="posts")
+     * @ORM\JoinTable(name="post_category",
+     *     joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id", onDelete="CASCADE")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="RESTRICT")}
+     * )
+     * @Assert\Count(min=1)
      */
     private $categories;
     
@@ -309,5 +315,23 @@ class Post
 
         public function __toString() {
         return (string)$this->getTitle();
+    }
+    
+    public function getSlug(){
+        $match = array();
+        preg_match_all('#(\b[a-z0-9]{3,}\b)#', strtolower($this->getTitle()), $match);
+        
+        if(!isset($match[1]) || !count($match[1]))
+            return 'article';
+        
+        return implode('-', array_slice($match[1], 0, 5));
+    }
+    
+    public function getRoutingParams(){
+        
+        return array(   'id'        => $this->getId(),
+                        'slug'      => $this->getSlug(),
+                        'category_id'  => $this->getCategories()->get(0)->getId(),
+                        'category'  => $this->getCategories()->get(0)->getSlug());
     }
 }

@@ -18,6 +18,7 @@
         </a>
     </li>
     <li><button type="button" onclick="forms.category_edit.submit();">Enregistrer</button></li>
+    {% if entity.posts|length < 1 %}
     <li>
         <form action="{{ path('badp_category_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
@@ -25,5 +26,6 @@
             <button type="submit">Supprimer</button>
         </form>
     </li>
+    {% endif %}
 </ul>
 {% endblock %}
