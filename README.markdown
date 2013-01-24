@@ -7,8 +7,10 @@ Blog Bundle for symfony2 v2.1 &amp; v2.2
 
 Features include:
 
+- URLs SEO friendly
 - Categories with 1 level sub category
 - Article writing with ckEditor (ckEditor provided by Trsteel/ckeditor-bundle)
+- Share your article on Facebook, Tweeter & Google+ (an api key needed for Facebook)
 - Picture upload and management with resizing, croping and rotate (integrated in ckEditor and provided by helios-ag/fm-elfinder-bundle)
 - Comments management with email confirmation to publish
 - Time between 2 comments from same IP is parametrable
@@ -89,6 +91,10 @@ Dump assetic (for production)
 **In future it will be (Symfony 2.2) this script in composer.json**
 
     "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::dumpAssetic"
+
+**VERY IMPORTANT**
+
+Read this "[YUI Compressor](http://symfony.com/doc/current/cookbook/assetic/yuicompressor.html)" unless picture management won't work in production mode
 
 ###7)  You have to implement (if you don't have yet) an user management
 

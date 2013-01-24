@@ -105,8 +105,9 @@ class DefaultController extends Controller
         $form   = $this->createForm(new CommentType(), $comment);
         
         return array(
-            'entity'      => $post,
-            'form'        => $form->createView()
+            'entity'            => $post,
+            'form'              => $form->createView(),
+            'facebook_api_id'   => $this->container->getParameter('mv_blog.facebook_api_id')
         );
     }
 

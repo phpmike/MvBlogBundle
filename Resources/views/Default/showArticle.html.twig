@@ -5,6 +5,22 @@
 
 {% block content_body %}
 {% include "MvBlogBundle:AdminBlog/Post:article.html.twig" %}
+<div class="social-share">
+    {% if facebook_api_id %}
+    <div class="btn btn-fb">
+        <fb:like send="false" layout="button_count" width="100" show_faces="false" action="recommend" font="arial"></fb:like>
+    </div>
+    {% endif %}
+    <div class="btn btn-tw">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+    <div class="btn btn-gg">
+        <g:plusone size="medium"></g:plusone>
+        <script type="text/javascript">gapi.plusone.go();</script>
+    </div>
+</div>
+<div class="clear"></div>
+
 {% for comment in entity.commentsPublied %}
 {% if loop.first %}<a name="blog_comments"></a>{% endif %}
 <div class="mv_blog_commentaire {% if loop.index is odd %}odd{% else %}even{% endif %}">
@@ -21,4 +37,30 @@
     </p>
     </fieldset>
 </form>
+
+{% if facebook_api_id %}
+<!-- FACEBOOK -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId={{ facebook_api_id  }}";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+{% endif %}
+    
+<!-- TWEETER -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<!-- GOOGLE+ -->
+<!-- Placez cette ballise après la dernière balise Bouton +1. -->
+<script type="text/javascript">
+  window.___gcfg = {lang: 'fr'};
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
 {% endblock %}

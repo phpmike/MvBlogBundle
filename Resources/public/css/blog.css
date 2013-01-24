@@ -74,6 +74,18 @@ P.mv_blog_article_suite A {
   font-style: italic;
 }
 
+/************** Social share ***************/
+DIV.social-share{
+  clear: both;
+  width: 100%;
+}
+
+DIV.social-share > DIV{
+  float: left;
+  margin-right: 20px;
+  width: auto
+}
+
 /************** Commentaires ***************/
 DIV.mv_blog_commentaire {
   padding: 4px 6px;  

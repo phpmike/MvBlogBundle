@@ -49,6 +49,12 @@ class Configuration implements ConfigurationInterface
                     ->info('Affiche le lien vers l\'accueil dans le menu')
                 ->end()
             ->end()
+            ->children()
+                ->scalarNode('facebook_api_id')
+                    ->defaultValue(null)
+                    ->info('Affiche le bouton Recommander Facebook (Nécessite un API ID Facebook)')
+                ->end()
+            ->end()
         ;
 
         return $treeBuilder;
