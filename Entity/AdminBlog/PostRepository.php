@@ -18,16 +18,33 @@ class PostRepository extends EntityRepository
      * 
      * @return Criteria
      */
+    static function getOrderedCriteria(){
+        return  $criteria = Criteria::create()->orderBy(array('publied' => Criteria::DESC));
+    }
+
+    /**
+     * 
+     * @return Criteria
+     */
     static function getPubliedOrderedCriteria(){
-        return  $criteria = Criteria::create()->andWhere(Criteria::expr()->gte('publied', date('Y-m-d H:i:s')))
-                                              ->orderBy(array('publied' => Criteria::DESC));
+        return self::getOrderedCriteria()->andWhere(Criteria::expr()->lte('publied', new \DateTime('now')));
+    }
+    
+    /**
+     * 
+     * @return array
+     */
+    public function findAllOrdered(){
+        $entities = new ArrayCollection($this->findAll());
+        
+        return $entities->matching(self::getOrderedCriteria())->toArray();
     }
 
     /**
      * 
      * @return array
      */
-    public function findAllPubliedOrdered(){        
+    public function findAllPubliedOrdered(){
         $entities = new ArrayCollection($this->findAll());
         
         return $entities->matching(self::getPubliedOrderedCriteria())->toArray();

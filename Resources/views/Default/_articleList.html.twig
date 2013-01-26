@@ -1,23 +1,27 @@
-{% for entity in pagination %}
-<div class="mv_blog_article_list {% if loop.index is odd %}odd{% else %}even{% endif %}">
-  <h2><a href="{{ path('blog_post_show', entity.routingParams ) }}">{{ entity.title }}</a></h2>
-  <div class="mv_blog_accroche">
-  {{ entity.accroche|raw }}
-    <p class="mv_blog_article_suite"><a href="{{ path('blog_post_show', entity.routingParams) }}">Lire la suite...</a></p>
-  </div>
-  {% if entity.commentsPublied|length == 0 %}
-    {% set link_comment = "Il n'y a aucun commentaire pour cet article" %}
-  {% else %}
-    {% set word_comment = " commentaire" %}
-    {% if entity.commentsPublied|length > 1 %}
-        {% set word_comment = word_comment ~ "s" %}
-    {% endif %}
-    {% set link_comment = '<a href="' ~ path('blog_post_show', entity.routingParams) ~ '#blog_comments">' ~ entity.commentsPublied|length ~ word_comment ~ '</a>' %}
-  {% endif %}
-  
-  <p class="mv_blog_mention clear">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }} - {{ link_comment|raw }}</p>
-</div>
-{% endfor %}
+{% if pagination|length %}
+    {% for entity in pagination %}
+    <div class="mv_blog_article_list {% if loop.index is odd %}odd{% else %}even{% endif %}">
+      <h2><a href="{{ path('blog_post_show', entity.routingParams ) }}">{{ entity.title }}</a></h2>
+      <div class="mv_blog_accroche">
+      {{ entity.accroche|raw }}
+        <p class="mv_blog_article_suite"><a href="{{ path('blog_post_show', entity.routingParams) }}">Lire la suite...</a></p>
+      </div>
+      {% if entity.commentsPublied|length == 0 %}
+        {% set link_comment = "Il n'y a aucun commentaire pour cet article" %}
+      {% else %}
+        {% set word_comment = " commentaire" %}
+        {% if entity.commentsPublied|length > 1 %}
+            {% set word_comment = word_comment ~ "s" %}
+        {% endif %}
+        {% set link_comment = '<a href="' ~ path('blog_post_show', entity.routingParams) ~ '#blog_comments">' ~ entity.commentsPublied|length ~ word_comment ~ '</a>' %}
+      {% endif %}
+
+      <p class="mv_blog_mention clear">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }} - {{ link_comment|raw }}</p>
+    </div>
+    {% endfor %}
+{% else %}
+    <div class="mv_blog_article_list odd">Il n'y a aucun article !</div>
+{% endif %}
 <div class="mv_blog_navigation">
     {{ pagination.render()|raw }}
 </div>

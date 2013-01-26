@@ -30,7 +30,7 @@ class PostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Post')->findAll();
+        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Post')->findAllOrdered();
 
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
