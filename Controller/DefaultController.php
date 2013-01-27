@@ -154,7 +154,8 @@ class DefaultController extends Controller
         
         return array(
             'entity'      => $entity,
-            'form'        => $form->createView()
+            'form'        => $form->createView(),
+            'facebook_api_id'   => $this->container->getParameter('mv_blog.facebook_api_id')
         );
     }
 

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints AS Assert;
 use Mv\BlogBundle\Validator\Constraints AS MvAssert;
+use Symfony\Component\Validator\ExecutionContext;
 
 /**
  * Comment
@@ -13,6 +14,7 @@ use Mv\BlogBundle\Validator\Constraints AS MvAssert;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Mv\BlogBundle\Entity\AdminBlog\CommentRepository")
  * @Gedmo\SoftDeleteable(fieldName="deleted")
+ * @Assert\Callback(methods={"validateIpControl"})
  */
 class Comment
 {
@@ -58,7 +60,7 @@ class Comment
      * @ORM\Column(type="string", length=40)
      * @Assert\NotBlank
      * @Assert\Ip(version="all")
-     * @MvAssert\ClientIp
+     * @MvAssert\ClientIp(groups="ip_control_group")
      */
     private $ip;
 
@@ -343,5 +345,12 @@ class Comment
     public function getDeleted()
     {
         return $this->deleted;
+    }
+    
+    public function validateIpControl(ExecutionContext $ec){
+        if(!$this->id) 
+        {
+            $ec->getGraphWalker()->walkReference($this, 'ip_control_group', $ec->getPropertyPath(), true);
+        }
     }
 }
