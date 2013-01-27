@@ -69,6 +69,17 @@ P.mv_blog_article_suite A {
   font-size: 0.9em;
 }
 
+UL.article_categories {
+  list-style: none;
+  padding: 2px 0;
+  margin: 0;
+}
+
+UL.article_categories LI {
+  padding: 2px 10px;
+  font-size: 0.85em;
+}
+
 .mv_blog_mention {
   font-size: 0.9em;
   font-style: italic;

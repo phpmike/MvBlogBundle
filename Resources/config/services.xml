@@ -36,5 +36,8 @@
                  <argument type="service" id="annotation_reader" />
             </call>
         </service>
+        <service id="mv.twig.mv_extension" class="Mv\BlogBundle\Twig\ArrayIntersectExtension">
+            <tag name="twig.extension" />
+        </service>        
     </services>
 </container>

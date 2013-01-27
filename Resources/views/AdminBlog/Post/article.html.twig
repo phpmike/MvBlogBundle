@@ -1,5 +1,7 @@
 <h1>{{ entity.title }}</h1>
 
+{% include 'MvBlogBundle:Default:_articleCategories.html.twig' with {'entity': entity} %}
+
 <div class="mv_blog_accroche">
 {{ entity.accroche|raw }}
 </div>

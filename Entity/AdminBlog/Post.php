@@ -249,6 +249,15 @@ class Post
     {
         return $this->categories;
     }
+    
+    /**
+     * 
+     * @return array of categories ids
+     */
+    public function getCategoriesKeys()
+    {
+        return array_map(function($entity){ return $entity->getId(); }, $this->getCategories()->toArray());
+    }
 
     /**
      * Set publied

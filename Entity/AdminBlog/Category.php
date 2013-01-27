@@ -334,6 +334,15 @@ class Category
     }
     
     /**
+     * 
+     * @return array of children ids
+     */
+    public function getChildrenKeys()
+    {
+        return array_map(function($entity){ return $entity->getId(); }, $this->getChildren()->toArray());
+    }
+
+    /**
      * Render childs with "> " before
      * @return string
      */

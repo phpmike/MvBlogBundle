@@ -1,0 +1,14 @@
+<ul class="article_categories">
+{% for cat in entity.categories %}
+    {% if cat.children.count == 0 %}
+        <li>
+        {% if cat.parent %}
+            <a href="{{ path('blog_category_list', cat.parent.routingParams ) }}">{{ cat.parent.title }}</a> > 
+        {% endif %}
+        <a href="{{ path('blog_category_list', cat.routingParams ) }}">{{ cat.title }}</a>
+        </li>
+    {% elseif cat.children.count > 0 and cat.childrenKeys|array_intersect(entity.categoriesKeys)|length == 0 %}
+        <li><a href="{{ path('blog_category_list', cat.routingParams ) }}">{{ cat.title }}</a></li>
+    {% endif %}
+{% endfor %}
+</ul>

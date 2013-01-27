@@ -15,7 +15,9 @@
         {% endif %}
         {% set link_comment = '<a href="' ~ path('blog_post_show', entity.routingParams) ~ '#blog_comments">' ~ entity.commentsPublied|length ~ word_comment ~ '</a>' %}
       {% endif %}
-
+      
+      {% include 'MvBlogBundle:Default:_articleCategories.html.twig' with {'entity': entity} %}
+      
       <p class="mv_blog_mention clear">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }} - {{ link_comment|raw }}</p>
     </div>
     {% endfor %}

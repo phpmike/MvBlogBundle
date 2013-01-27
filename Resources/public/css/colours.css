@@ -32,4 +32,8 @@ DIV#mv_blog_menu_left UL > LI A:hover{ color: #aaa; }
 DIV.mv_blog_article_list.odd { background-color: #f9f9f9; }
 DIV.mv_blog_article_list.even { background-color: #fcfcfc; }
 
+UL.article_categories { border: 1px solid #eee; }
+UL.article_categories LI { color: #ddd; }
+UL.article_categories LI A { color: #666; }
+
 .mv_blog_mention { color: #aaa; }
