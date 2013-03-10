@@ -1,7 +1,9 @@
 MvBlogBundle
 ============
 
-Blog Bundle for symfony2 v2.1 &amp; v2.2
+Blog Bundle for symfony2 v2.2 NOT STABLE YET
+
+(For Symfony 2.1, see 1.0.x tags, more stable)
 
 [![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
 
@@ -19,16 +21,16 @@ Features include:
 INSTALLATION with COMPOSER
 --------------------------
 
-You need have installed Symfony2 with Composer or have a composer.json file
+You need have installed Symfony2 2.2 with Composer or have a composer.json file
 
 ###1)  Add to composer.json in the root `require` key  
 
-    "mv/mv-blog-bundle": "1.0.*",
+    "mv/mv-blog-bundle": "dev-master",
     "Trsteel/ckeditor-bundle": "master@dev",
     "helios-ag/fm-elfinder-bundle": "dev-master",
     "helios-ag/fm-elfinder": "2.x-dev"
 
-The second & third requirement here because only dev version available for Symfony 2.1 and composer won't install with alpha minimal stability
+The second & third requirement here because only dev version available for Symfony 2.2 and composer won't install with alpha minimal stability
 
 you need also have the root key:
 
