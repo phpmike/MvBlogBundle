@@ -1,3 +1,4 @@
+#
 fm_elfinder:
     locale: %locale%
     editor: ckeditor
