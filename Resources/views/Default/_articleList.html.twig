@@ -7,7 +7,7 @@
         <p class="mv_blog_article_suite"><a href="{{ path('blog_post_show', entity.routingParams) }}">Lire la suite...</a></p>
       </div>
       {% if entity.commentsPublied|length == 0 %}
-        {% set link_comment = "Il n'y a aucun commentaire pour cet article" %}
+        {% set link_comment = 'default.no_comments'|trans({}, 'MvBlogBundle') %}
       {% else %}
         {% set word_comment = " commentaire" %}
         {% if entity.commentsPublied|length > 1 %}
@@ -18,11 +18,13 @@
       
       {% include 'MvBlogBundle:Default:_articleCategories.html.twig' with {'entity': entity} %}
       
-      <p class="mv_blog_mention clear">Dernière mise à jour le {{ entity.updated|date('d/m/Y') }} à {{ entity.updated|date('H:i') }} - {{ link_comment|raw }}</p>
+      <p class="mv_blog_mention clear">
+          {{ 'default.lastupdated_on'|trans({'%date%': entity.updated|date('d/m/Y'), '%time%': entity.updated|date('H:i')}, 'MvBlogBundle') }} - {{ link_comment|raw }}
+      </p>
     </div>
     {% endfor %}
 {% else %}
-    <div class="mv_blog_article_list odd">Il n'y a aucun article !</div>
+    <div class="mv_blog_article_list odd">{{ 'default.no_article'|trans({}, 'MvBlogBundle') }}</div>
 {% endif %}
 <div class="mv_blog_navigation">
     {{ knp_pagination_render(pagination)|raw }}

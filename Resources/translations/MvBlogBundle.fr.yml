@@ -1,0 +1,40 @@
+menu:
+    welcome: Accueil
+
+admin:
+    view: Voir mon blog
+    categories: Catégories
+    posts: Articles
+    comments: Commentaires
+    back: Retour à la liste
+    register: Enregistrer
+    remove: Supprimer
+    modify: Modifier
+    actions: Actions
+    title: Titre
+    logout: Déconnexion
+    secured:
+        title: Administration du blog
+        index: Depuis cet espace, vous pouvez gérer vos articles, les catégories du blog, etc...
+    category:
+        title: Liste des catégories
+        create: Créer une nouvelle catégorie
+        description: Description
+    comment:
+        title: Liste des commentaires
+        pseudo: Pseudo
+        email: Email
+        comment: Commentaire
+        writes: Écrit le
+    post:
+        title: Liste des articles
+        published_at: Article publié le %date% à %time%
+        create: Créer un nouvel article
+        created: Créé le
+        modified: Modifié le
+        view: Voir
+
+default:
+    lastupdate_on: Dernière mise à jour le %date% à %time%
+    no_comments: Il n'y a aucun commentaire pour cet article
+    no_article: Il n'y a aucun article !

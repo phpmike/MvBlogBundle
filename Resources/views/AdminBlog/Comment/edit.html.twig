@@ -13,14 +13,14 @@
 <ul class="record_actions">
     <li>
         <a href="{{ path('badp_comment') }}">
-            Retour à la liste
+            {{ 'admin.back'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
-    <li><button type="button" onclick="forms.comment_edit.submit();">Enregistrer</button></li>
+    <li><button type="button" onclick="forms.comment_edit.submit();">{{ 'admin.register'|trans({}, 'MvBlogBundle') }}</button></li>
     <li>
         <form action="{{ path('badp_comment_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
-            <button type="submit">Supprimer</button>
+            <button type="submit">{{ 'admin.remove'|trans({}, 'MvBlogBundle') }}</button>
         </form>
     </li>
 </ul>

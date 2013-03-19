@@ -11,5 +11,6 @@
 </div>
 
 <p class="mv_blog_mention">
-Article publié le {{ entity.publied|date('d/m/Y') }} à {{ entity.publied|date('H:i') }}
+{#Article publié le {{ entity.publied|date('d/m/Y') }} à {{ entity.publied|date('H:i') }}#}
+{{ 'admin.post.published_at'|trans({'%date%': entity.publied|date('d/m/Y'), '%time%': entity.publied|date('H:i')}, 'MvBlogBundle') }}
 </p>

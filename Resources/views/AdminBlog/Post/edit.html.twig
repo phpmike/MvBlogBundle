@@ -14,15 +14,15 @@
 <ul class="record_actions">
     <li>
         <a href="{{ path('badp_post') }}">
-            Retour à la liste
+            {{ 'admin.back'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
-    <li><button type="button" onclick="forms.post_edit.submit();">Enregistrer</button></li>
+    <li><button type="button" onclick="forms.post_edit.submit();">{{ 'admin.register'|trans({}, 'MvBlogBundle') }}</button></li>
     <li>
         <form action="{{ path('badp_post_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
-            <button type="submit">Supprimer</button>
+            <button type="submit">{{ 'admin.remove'|trans({}, 'MvBlogBundle') }}</button>
         </form>
     </li>
 </ul>

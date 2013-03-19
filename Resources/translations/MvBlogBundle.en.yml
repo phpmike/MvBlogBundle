@@ -1,0 +1,41 @@
+menu:
+    welcome: Welcome
+
+admin:
+    view: View my blog
+    categories: Categories
+    posts: Posts
+    comments: Comments
+    back: Back to list
+    register: Register
+    remove: Remove
+    modify: Modify
+    actions: Actions
+    title: Title
+    logout: Logout
+    secured:
+        title: Blog Administration
+        index: From this section you can manage your posts, categories blog, etc ...
+    category:
+        title: Category list
+        create: Create new category
+        description: Description
+    comment:
+        title: Comments list
+        pseudo: Alias
+        email: Email
+        comment: Comment
+        writes: Writes
+    post:
+        title: Posts list
+        published_at: Post published on %date% at %time%
+        create: Create a new post
+        created: Created
+        modified: Modified
+        view: View
+
+default:
+    lastupdated_on: Last updated at %date% at %time%
+    no_comments: There are no comments for this article
+    no_article: There is no article!
+
