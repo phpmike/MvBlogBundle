@@ -24,7 +24,9 @@
 {% for comment in entity.commentsPublied %}
 {% if loop.first %}<a name="blog_comments"></a>{% endif %}
 <div class="mv_blog_commentaire {% if loop.index is odd %}odd{% else %}even{% endif %}">
-    <p class="mv_blog_mention">Le {{ comment.created|date('d/m/Y') }} à {{ comment.created|date('H:i') }}, {{ comment.pseudo }} a écrit :</p>
+    <p class="mv_blog_mention">
+        {{ 'default.comment_published_at'|trans({'%date%': comment.created|date('d/m/Y'), '%time%': comment.created|date('H:i'), '%name%': comment.pseudo}, 'MvBlogBundle') }}:
+    </p>
     <p>{{ comment.comment|nl2br }}</p>
 </div>
 {% endfor %}

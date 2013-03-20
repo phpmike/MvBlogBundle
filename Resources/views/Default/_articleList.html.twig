@@ -4,7 +4,11 @@
       <h2><a href="{{ path('blog_post_show', entity.routingParams ) }}">{{ entity.title }}</a></h2>
       <div class="mv_blog_accroche">
       {{ entity.accroche|raw }}
-        <p class="mv_blog_article_suite"><a href="{{ path('blog_post_show', entity.routingParams) }}">Lire la suite...</a></p>
+        <p class="mv_blog_article_suite">
+            <a href="{{ path('blog_post_show', entity.routingParams) }}">
+                {{ 'default.readmore'|trans({}, 'MvBlogBundle') }}...
+            </a>
+        </p>
       </div>
       {% if entity.commentsPublied|length == 0 %}
         {% set link_comment = 'default.no_comments'|trans({}, 'MvBlogBundle') %}
