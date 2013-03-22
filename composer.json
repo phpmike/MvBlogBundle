@@ -39,5 +39,13 @@
             "Mv\\BlogBundle": ""
         }
     },
-    "target-dir" : "Mv/BlogBundle"
+    "target-dir" : "Mv/BlogBundle",
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::dumpAssetic"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::dumpAssetic"
+        ]
+    }
 }
