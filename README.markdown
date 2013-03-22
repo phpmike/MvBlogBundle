@@ -1,9 +1,9 @@
 MvBlogBundle
 ============
 
-Blog Bundle for symfony2 v2.2 NOT STABLE YET
+Blog Bundle for symfony2 v2.2
 
-(For Symfony 2.1, see 1.0.x tags, more stable)
+(For Symfony 2.1, see 1.0.x tags)
 
 [![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
 
@@ -90,7 +90,7 @@ Dump assetic (for production)
     
     php app/console assetic:dump
 
-**In future it will be (Symfony 2.2) this script in composer.json**
+**In future it will be this script in root composer.json**
 
     "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::dumpAssetic"
 
