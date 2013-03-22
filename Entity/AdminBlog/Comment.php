@@ -32,7 +32,7 @@ class Comment
      *
      * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank
-     * @Assert\MinLength(4)
+     * @Assert\Length({"min": 4, "max": 50})
      */
     private $pseudo;
     
@@ -69,7 +69,7 @@ class Comment
      *
      * @ORM\Column(type="text")
      * @Assert\NotBlank
-     * @Assert\MinLength(10)
+     * @Assert\Length({"min": 10, "max": 1000})
      */
     private $comment;
     

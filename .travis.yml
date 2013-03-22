@@ -10,7 +10,7 @@ matrix:
     - php: 5.5
     
 env:
-  - SYMFONY_VERSION=v2.1
+  - SYMFONY_VERSION=v2.2
 
 before_script:
     - curl -s http://getcomposer.org/installer | php
