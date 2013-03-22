@@ -1,9 +1,9 @@
 MvBlogBundle
 ============
 
-Blog Bundle for symfony2 v2.2
+Blog Bundle for symfony2 v2.2 NOT STABLE YET
 
-(For Symfony 2.1, see 1.0.x tags)
+(For Symfony 2.1, see 1.0.x tags, more stable)
 
 [![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
 
@@ -85,6 +85,14 @@ Ensure you have in your AppKernel.php
 Run update with composer
 
     php path/to/composer.phar update
+
+Dump assetic (for production)
+    
+    php app/console assetic:dump
+
+**In future it will be (Symfony 2.2) this script in composer.json**
+
+    "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::dumpAssetic"
 
 **VERY IMPORTANT**
 
