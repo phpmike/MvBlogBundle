@@ -1,9 +1,9 @@
 MvBlogBundle
 ============
 
-Blog Bundle for symfony2 v2.2
+Blog Bundle for symfony2 v2.2 (v2.1 are tagged 1.0.x)
 
-(For Symfony 2.1, see 1.0.x tags)
+If you're upgrading from 1.0.x, see "[UPGRADE-1.2](https://github.com/phpmike/MvBlogBundle/blob/master/Resources/Doc/UPGRADE-1.2.markdown)"
 
 [![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
 
@@ -25,7 +25,7 @@ You need have installed Symfony2 2.2 with Composer or have a composer.json file
 
 ###1)  Add to composer.json in the root `require` key  
 
-    "mv/mv-blog-bundle": "dev-master",
+    "mv/mv-blog-bundle": "1.2.*",
     "helios-ag/fm-elfinder-bundle": "dev-master",
     "helios-ag/fm-elfinder": "2.x-dev"
 
@@ -33,7 +33,7 @@ The second & third requirement here because only dev version available for Symfo
 
 you need also have the root key:
 
-    "minimum-stability": "alpha",
+    "minimum-stability": "beta",
 
 Because this is an alpha version
 
