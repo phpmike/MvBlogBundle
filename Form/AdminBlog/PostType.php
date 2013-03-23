@@ -13,13 +13,14 @@ class PostType extends AbstractType
     {
         $builder
             ->add('title', null, array('label' => 'Titre'))
-            ->add('accroche','ckeditor')
-            ->add('article','ckeditor')
+            ->add('accroche','ckeditor', array('config_name' => 'default'))
+            ->add('article','ckeditor', array('config_name' => 'extended'))
             ->add('categories', null, array('label'         => 'Catégorie(s)',
                                             'query_builder' => function(NestedTreeRepository $er){ return $er->getNodesHierarchyQueryBuilder(); },
                                             'property'      => 'selectRender'))
             ->add('publied', null, array('label' => 'Publication le'))
         ;
+
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

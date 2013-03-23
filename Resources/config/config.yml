@@ -11,16 +11,36 @@ fm_elfinder:
                 upload_allow: ['image/png', 'image/jpg', 'image/jpeg']
                 upload_deny: ['all']
                 upload_max_size: 2M
-                
-trsteel_ckeditor:
-    filebrowser_browse_url:
-        route: elfinder
-        route_parameters:
-            mode: file  
-    filebrowser_image_browse_url:
-        route: elfinder
-        route_parameters:
-            mode: image 
+
+ivory_ck_editor:
+    configs:
+        default:
+            toolbar:                "default"
+            filebrowserImageBrowseRoute:      elfinder
+            filebrowserImageBrowseParameters:
+              mode: image
+        extended:
+            toolbar:                "extended"
+            filebrowserImageBrowseRoute:      elfinder
+            filebrowserImageBrowseParameters:
+              mode: image
+    toolbars:
+        configs:
+            default:  [ "@paragraph", "@list", "@links", "@tools", [ "Source" ] , "/", [ "Image", "Smiley" ], "@basicstyles", "@styles", "@colors"  ]
+            extended: [ "@paragraph", "@list", "@links", "@tools", [ "Source" ] , "/", "@insert", "@basicstyles", "@styles", "@colors"  ]
+        items:
+            document:     [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ]
+            clipboard:    [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ]
+            editing:      [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ]
+            forms:        [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ]
+            basicstyles:  [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ]
+            paragraph:    [ 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl','-','Blockquote','CreateDiv' ]
+            list:         [ 'NumberedList','BulletedList','-','Outdent','Indent' ]
+            links:        [ 'Link','Unlink','Anchor' ]
+            insert:       [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ]
+            styles:       [ 'Styles','Format','Font','FontSize' ]
+            colors:       [ 'TextColor','BGColor' ]
+            tools:        [ 'Maximize', 'ShowBlocks','-','About' ]
 
 # Assetic Configuration
 assetic:
@@ -31,4 +51,4 @@ doctrine:
         filters:
             softdeleteable:
                 class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
-                enabled: true              
+                enabled: true             

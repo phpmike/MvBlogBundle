@@ -26,7 +26,6 @@ You need have installed Symfony2 2.2 with Composer or have a composer.json file
 ###1)  Add to composer.json in the root `require` key  
 
     "mv/mv-blog-bundle": "dev-master",
-    "Trsteel/ckeditor-bundle": "master@dev",
     "helios-ag/fm-elfinder-bundle": "dev-master",
     "helios-ag/fm-elfinder": "2.x-dev"
 
@@ -49,7 +48,7 @@ You can do it by adding this option to your "extra" key in composer.json
 ###2)  Add to your AppKernel.php
 
     new Mv\BlogBundle\MvBlogBundle(),
-    new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
+    new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
     new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
     new FM\ElfinderBundle\FMElfinderBundle(),
 
