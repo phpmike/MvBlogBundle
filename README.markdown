@@ -25,17 +25,17 @@ You need have installed Symfony2 2.2 with Composer or have a composer.json file
 
 ###1)  Add to composer.json in the root `require` key  
 
-    "mv/mv-blog-bundle": "1.2.*",
+    "mv/mv-blog-bundle": "1.2.*@beta",
     "helios-ag/fm-elfinder-bundle": "dev-master",
-    "helios-ag/fm-elfinder": "2.x-dev"
+    "helios-ag/fm-elfinder": "2.*@dev"
 
 The second & third requirement here because only dev version available for Symfony 2.2 and composer won't install with alpha minimal stability
 
 you need also have the root key:
 
-    "minimum-stability": "beta",
+    "minimum-stability": "alpha",
 
-Because this is an alpha version
+Because some dependencies are alpha version
 
 **I deeply recommend to use symlinks for assets to non expose your images to be deleted**
 
