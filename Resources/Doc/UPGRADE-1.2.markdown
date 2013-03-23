@@ -13,12 +13,4 @@ by
 
     new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
-###3)  Replace in your composer.json
-
-    "minimum-stability": "alpha",
-
-by
-
-    "minimum-stability": "beta",
-
 that's all (I think)
