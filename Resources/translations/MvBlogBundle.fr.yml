@@ -44,3 +44,9 @@ default:
     no_article: Il n'y a aucun article !
     readmore: Lire la suite
     comment_published_at: Le %date% à %time% %name% a écrit
+    comment:
+        email:
+            subject: Publication de votre commentaire
+        saved: Votre commentaire est enregistré.
+        message_notice: Vous allez recevoir un message vous demandant de confirmer sa publication.
+        confirmed: Votre commentaire a déjà été confirmé!

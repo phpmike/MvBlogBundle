@@ -130,13 +130,15 @@ class DefaultController extends Controller
         
         $comment->setToken($this->getRequest()->server->get('UNIQUE_ID') . date('U'));
 
+        $t = $this->get('translator');
+
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();
             
             $message = \Swift_Message::newInstance()
-                ->setSubject('Publication de votre commentaire')
+                ->setSubject($t->trans('default.comment.email.subject'))
                 ->setFrom($this->container->getParameter('mv_blog.robot_email'))
                 ->setTo($comment->getEmail())
                 ->setBody($this->renderView('MvBlogBundle:Default/Mail:confirm-comment.txt.twig',
@@ -146,8 +148,8 @@ class DefaultController extends Controller
             ;
             $this->get('mailer')->send($message);
             
-            $this->get('session')->getFlashBag()->add('notice', "Votre commentaire est enregistré.");
-            $this->get('session')->getFlashBag()->add('notice', "Vous allez recevoir un message vous demandant de confirmer sa publication.");
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.saved'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.message_notice'));
     
             return $this->redirect($this->generateUrl('blog_post_show', $entity->getRoutingParams()));
         }
@@ -168,6 +170,7 @@ class DefaultController extends Controller
     public function commentConfirmAction($email, $token){
         
         $em = $this->getDoctrine()->getManager();
+        $t = $this->get('translator');
 
         $comment = $em->getRepository('MvBlogBundle:AdminBlog\Comment')->findOneBy(array('email' => $email,'token' => $token));
         
@@ -175,9 +178,9 @@ class DefaultController extends Controller
             if($comment->getPublied() === null){
                 $comment->setPublied(new \DateTime('now'));
                 $em->flush();
-                $this->get('session')->getFlashBag()->add('notice', "Votre commentaire est confirmé !");
+                $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.confirmed'));
             }else
-                $this->get('session')->getFlashBag()->add('error', "Votre commentaire a déjà été confirmé !");
+                $this->get('session')->getFlashBag()->add('error', $t->trans('default.comment.confirmed'));
                 
             return $this->redirect($this->generateUrl('blog_post_show', $comment->getPost()->getRoutingParams()));
         }

@@ -44,4 +44,11 @@ default:
     no_article: There is no article!
     readmore: Read more
     comment_published_at: On %date% at %time% %name% wrote
+    comment:
+        email:
+            subject: Publication of your comment
+        saved: Your comment has been saved.
+        message_notice: You will receive a message asking you to confirm its publication.
+        confirmed: Your comment has been confirmed!
+
 
