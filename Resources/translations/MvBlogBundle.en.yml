@@ -13,6 +13,8 @@ admin:
     actions: Actions
     title: Title
     logout: Logout
+    form_submit_success: Your changes have been saved.
+    form_submit_error: There are errors in the submitted form!
     secured:
         title: Blog Administration
         index: From this section you can manage your posts, categories blog, etc ...
@@ -20,6 +22,7 @@ admin:
         title: Category list
         create: Create new category
         description: Description
+        created: Your categtory has been created.
     comment:
         title: Comments list
         pseudo: Alias

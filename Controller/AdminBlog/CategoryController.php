@@ -54,6 +54,8 @@ class CategoryController extends Controller
      */
     public function createAction(Request $request)
     {
+        $t = $this->get('translator');
+
         $entity  = new Category();
         $form = $this->createForm(new CategoryType(), $entity);
         $form->bind($request);
@@ -63,11 +65,11 @@ class CategoryController extends Controller
             $em->persist($entity);
             $em->flush();
             $this->orderingCategories();
-            $this->get('session')->getFlashBag()->add('notice', "Votre catégorie est créée.");
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.category.created'));
 
             return $this->redirect($this->generateUrl('badp_category', array('id' => $entity->getId())));
         }
-        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
 
         return array(
             'entity' => $entity,
@@ -133,6 +135,7 @@ class CategoryController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $t = $this->get('translator');
 
         $entity = $em->getRepository('MvBlogBundle:AdminBlog\Category')->find($id);
 
@@ -148,11 +151,11 @@ class CategoryController extends Controller
             $em->persist($entity);
             $em->flush();
             $this->orderingCategories();
-            $this->get('session')->getFlashBag()->add('notice', "Vos modifications ont été enregistrées.");
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success'));
             
             return $this->redirect($this->generateUrl('badp_category'));
         }
-        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
 
         return array(
             'entity'      => $entity,

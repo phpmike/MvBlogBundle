@@ -13,6 +13,8 @@ admin:
     actions: Actions
     title: Titre
     logout: Déconnexion
+    form_submit_success: Vos modifications ont été enregistrées.
+    form_submit_error: Il y a des erreurs dans le formulaire soumis!
     secured:
         title: Administration du blog
         index: Depuis cet espace, vous pouvez gérer vos articles, les catégories du blog, etc...
@@ -20,6 +22,7 @@ admin:
         title: Liste des catégories
         create: Créer une nouvelle catégorie
         description: Description
+        created: Votre catégorie est créée.
     comment:
         title: Liste des commentaires
         pseudo: Pseudo
