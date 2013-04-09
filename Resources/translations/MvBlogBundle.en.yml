@@ -51,4 +51,12 @@ default:
         message_notice: You will receive a message asking you to confirm its publication.
         confirmed: Your comment has been confirmed!
 
+form:
+    category:
+        label:
+            website: Website
+            comment: Comment
+            published: Published
+
+
 

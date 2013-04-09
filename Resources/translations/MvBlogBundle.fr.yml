@@ -50,3 +50,10 @@ default:
         saved: Votre commentaire est enregistré.
         message_notice: Vous allez recevoir un message vous demandant de confirmer sa publication.
         confirmed: Votre commentaire a déjà été confirmé!
+
+form:
+    category:
+        label:
+            website: Site web
+            comment: Commentaire
+            published: Publié le
