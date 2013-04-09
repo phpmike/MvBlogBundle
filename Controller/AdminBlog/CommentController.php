@@ -81,6 +81,7 @@ class CommentController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $t = $this->get('translator');
 
         $entity = $em->getRepository('MvBlogBundle:AdminBlog\Comment')->find($id);
 
@@ -95,11 +96,11 @@ class CommentController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', "Vos modifications ont été enregistrées.");
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success'));
 
             return $this->redirect($this->generateUrl('badp_comment'));
         }
-        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
 
         return array(
             'entity'      => $entity,
