@@ -36,6 +36,7 @@ admin:
         created: Created
         modified: Modified
         view: View
+        has_been_created: Your post has been created.
 
 default:
     lastupdated_on: Last updated at %date% at %time%

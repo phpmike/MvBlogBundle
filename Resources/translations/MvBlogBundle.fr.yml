@@ -36,6 +36,7 @@ admin:
         created: Créé le
         modified: Modifié le
         view: Voir
+        has_been_created: Votre article est créé.
 
 default:
     lastupdate_on: Dernière mise à jour le %date% à %time%
