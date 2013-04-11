@@ -24,9 +24,9 @@ class CommentType extends AbstractType
         $builder
             ->add('pseudo')
             ->add('email')
-            ->add('web', null, array('label' => 'Site web'))
+            ->add('web', null, array('label' => 'form.comment.website', 'translation_domain' => 'MvBlogBundle'))
             ->add('ip','hidden')
-            ->add('comment', null, array('label' => 'Commentaire'))
+            ->add('comment', null, array('label' => 'form.comment.comment', 'translation_domain' => 'MvBlogBundle'))
         ;
         if($this->usage === 'admin'){
             $builder->add('token')

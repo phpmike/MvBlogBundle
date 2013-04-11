@@ -52,8 +52,7 @@ default:
         confirmed: Votre commentaire a déjà été confirmé!
 
 form:
-    category:
-        label:
-            website: Site web
-            comment: Commentaire
-            published: Publié le
+    comment:
+        website: Site web
+        comment: Commentaire
+        published: Publié le
