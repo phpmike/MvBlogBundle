@@ -25,10 +25,11 @@ admin:
         created: Your categtory has been created.
     comment:
         title: Comments list
-        pseudo: Alias
+        pseudo: Name
         email: Email
         comment: Comment
         writes: Writes
+        title: Edit Comment
     post:
         title: Posts list
         published_at: Post published on %date% at %time%
@@ -50,6 +51,8 @@ default:
         saved: Your comment has been saved.
         message_notice: You will receive a message asking you to confirm its publication.
         confirmed: Your comment has been confirmed!
+        submit: Submit
+        legend: Comment on post
 
 form:
     comment:

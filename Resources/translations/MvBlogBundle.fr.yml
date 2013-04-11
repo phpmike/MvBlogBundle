@@ -29,6 +29,7 @@ admin:
         email: Email
         comment: Commentaire
         writes: Écrit le
+        title: Modifier le commentaire de
     post:
         title: Liste des articles
         published_at: Article publié le %date% à %time%
@@ -50,6 +51,8 @@ default:
         saved: Votre commentaire est enregistré.
         message_notice: Vous allez recevoir un message vous demandant de confirmer sa publication.
         confirmed: Votre commentaire a déjà été confirmé!
+        submit: Envoyer
+        legend: Commenter l'article
 
 form:
     comment:

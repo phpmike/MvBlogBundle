@@ -32,10 +32,10 @@
 {% endfor %}
 <form class="mv_blog_new_comment" action="{{ path('blog_post_comment', { 'id': entity.id }) }}" method="post" {{ form_enctype(form) }}>
     <fieldset>
-    <legend>Commenter l'article</legend>
+    <legend>{{ 'default.comment.legend'|trans({}, 'MvBlogBundle') }}</legend>
     {{ form_widget(form) }}
     <p>
-        <button type="submit">Envoyer</button>
+        <button type="submit">{{ 'default.comment.submit'|trans({}, 'MvBlogBundle') }}</button>
     </p>
     </fieldset>
 </form>

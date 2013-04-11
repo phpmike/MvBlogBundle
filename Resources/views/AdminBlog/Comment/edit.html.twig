@@ -1,5 +1,5 @@
 {% extends 'MvBlogBundle::admin-layout.html.twig' %}
-{% set page_title = 'Modifier le commentaire de "' ~ entity.post.title ~ '"' %}
+{% set page_title = 'admin.comment.title'|trans({}, 'MvBlogBundle') ~ ' "' ~ entity.post.title ~ '"' %}
 
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 
