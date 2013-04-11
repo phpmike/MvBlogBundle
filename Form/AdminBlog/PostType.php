@@ -12,13 +12,14 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array('label' => 'Titre'))
-            ->add('accroche','ckeditor')
+            ->add('title', null, array('label' => 'form.post.title', 'translation_domain' => 'MvBlogBundle'))
+            ->add('accroche','ckeditor', array('label' => 'form.post.hang', 'translation_domain' => 'MvBlogBundle'))
             ->add('article','ckeditor')
-            ->add('categories', null, array('label'         => 'Catégorie(s)',
+            ->add('categories', null, array('label' => 'form.post.categories',
+                                            'translation_domain' => 'MvBlogBundle',
                                             'query_builder' => function(NestedTreeRepository $er){ return $er->getNodesHierarchyQueryBuilder(); },
                                             'property'      => 'selectRender'))
-            ->add('publied', null, array('label' => 'Publication le'))
+            ->add('publied', null, array('label' => 'form.post.publication', 'translation_domain' => 'MvBlogBundle'))
         ;
     }
 

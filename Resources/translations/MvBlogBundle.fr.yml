@@ -56,3 +56,13 @@ form:
         website: Site web
         comment: Commentaire
         published: Publié le
+    category:
+        title: Titre
+        parent: Catégorie parente
+    post:
+        title: Titre
+        hang: Accroche
+        categories: Catégorie(s)
+        publication: Publication le
+
+

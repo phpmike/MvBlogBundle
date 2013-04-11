@@ -56,6 +56,14 @@ form:
         website: Website
         comment: Comment
         published: Published
+    category:
+        title: Title
+        parent: Parent category
+    post:
+        title: Title
+        hang: Hang
+        categories: Categorie(s)
+        publication: Published On
 
 
 

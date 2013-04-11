@@ -31,7 +31,7 @@ class CommentType extends AbstractType
         if($this->usage === 'admin'){
             $builder->add('token')
                     ->add('ip')
-                    ->add('publied', null, array('label' => 'Publié le'))
+                    ->add('publied', null, array('label' => 'form.comment.published', 'translation_domain' => 'MvBlogBundle'))
             ;
         }
     }
