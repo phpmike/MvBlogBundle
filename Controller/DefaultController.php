@@ -107,7 +107,8 @@ class DefaultController extends Controller
         return array(
             'entity'            => $post,
             'form'              => $form->createView(),
-            'facebook_api_id'   => $this->container->getParameter('mv_blog.facebook_api_id')
+            'facebook_api_id'   => $this->container->getParameter('mv_blog.facebook_api_id'),
+            'local'             => $this->get('translator')->getLocale()
         );
     }
 
