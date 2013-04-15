@@ -96,11 +96,11 @@ class CommentController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success', array(), 'MvBlogBundle'));
 
             return $this->redirect($this->generateUrl('badp_comment'));
         }
-        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity'      => $entity,

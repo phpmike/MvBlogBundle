@@ -65,11 +65,11 @@ class CategoryController extends Controller
             $em->persist($entity);
             $em->flush();
             $this->orderingCategories();
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.category.created'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.category.created', array(), 'MvBlogBundle'));
 
             return $this->redirect($this->generateUrl('badp_category', array('id' => $entity->getId())));
         }
-        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity' => $entity,
@@ -151,11 +151,11 @@ class CategoryController extends Controller
             $em->persist($entity);
             $em->flush();
             $this->orderingCategories();
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success', array(), 'MvBlogBundle'));
             
             return $this->redirect($this->generateUrl('badp_category'));
         }
-        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity'      => $entity,

@@ -64,11 +64,11 @@ class PostController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.post.has_been_created'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.post.has_been_created', array(), 'MvBlogBundle'));
 
             return $this->redirect($this->generateUrl('badp_post_show', array('id' => $entity->getId())));
         }
-        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity' => $entity,
@@ -175,11 +175,11 @@ class PostController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success', array(), 'MvBlogBundle'));
 
             return $this->redirect($this->generateUrl('badp_post_show', array('id' => $id)));
         }
-        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error'));
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity'      => $entity,
