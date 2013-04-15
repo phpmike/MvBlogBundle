@@ -52,6 +52,21 @@ default:
     comment:
         email:
             subject: Publication of your comment
+            message: |
+                You are receiving this email because a comment was posted on our blog.
+
+                We ask you to confirm your comment by clicking this link:
+
+                %url%
+
+                If the link is not clickable, please copy the above url in the address bar of your browser.
+
+                Reminder of your comment:
+                %message%
+
+                Link to the article in question:Link to the article in question:
+                %url_article%
+
         saved: Your comment has been saved.
         message_notice: You will receive a message asking you to confirm its publication.
         confirmed: Your comment has been confirmed!

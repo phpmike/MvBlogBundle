@@ -139,7 +139,7 @@ class DefaultController extends Controller
             $em->flush();
             
             $message = \Swift_Message::newInstance()
-                ->setSubject($t->trans('default.comment.email.subject'))
+                ->setSubject($t->trans('default.comment.email.subject', array(), 'MvBlogBundle'))
                 ->setFrom($this->container->getParameter('mv_blog.robot_email'))
                 ->setTo($comment->getEmail())
                 ->setBody($this->renderView('MvBlogBundle:Default/Mail:confirm-comment.txt.twig',
