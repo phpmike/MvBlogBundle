@@ -33,12 +33,14 @@ admin:
         title: Edit Comment
     post:
         title: Posts list
+        title_edit: Edit post
         published_at: Post published on %date% at %time%
         create: Create a new post
         created: Created
         modified: Modified
         view: View
         has_been_created: Your post has been created.
+        edit: Edit
 
 default:
     lastupdated_on: Last updated at %date% at %time%

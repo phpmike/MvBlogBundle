@@ -33,12 +33,14 @@ admin:
         title: Modifier le commentaire de
     post:
         title: Liste des articles
+        title_edit: Modifier l'article
         published_at: Article publié le %date% à %time%
         create: Créer un nouvel article
         created: Créé le
         modified: Modifié le
         view: Voir
         has_been_created: Votre article est créé.
+        edit: Modifier
 
 default:
     lastupdate_on: Dernière mise à jour le %date% à %time%

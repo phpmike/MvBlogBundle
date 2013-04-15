@@ -37,10 +37,10 @@
             <td>
                 <ul class="records_list_actions">
                     <li>
-                        <a href="{{ path('badp_post_show', { 'id': entity.id }) }}">Voir</a>
+                        <a href="{{ path('badp_post_show', { 'id': entity.id }) }}">{{ 'admin.post.view'|trans({}, 'MvBlogBundle') }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('badp_post_edit', { 'id': entity.id }) }}">Modifier</a>
+                        <a href="{{ path('badp_post_edit', { 'id': entity.id }) }}">{{ 'admin.post.edit'|trans({}, 'MvBlogBundle') }}</a>
                     </li>
                 </ul>
             </td>
