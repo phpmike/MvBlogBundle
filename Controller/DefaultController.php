@@ -130,6 +130,7 @@ class DefaultController extends Controller
         
         $comment->setToken($this->getRequest()->server->get('UNIQUE_ID') . date('U'));
 
+        /** @var $t \Symfony\Bundle\FrameworkBundle\Translation\Translator */
         $t = $this->get('translator');
 
         if ($form->isValid()) {
@@ -147,9 +148,9 @@ class DefaultController extends Controller
                                                     'url'           => $this->generateUrl('blog_post_comment_confirm', array('email' => $comment->getEmail(), 'token' => $comment->getToken()), true))))
             ;
             $this->get('mailer')->send($message);
-            
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.saved'));
-            $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.message_notice'));
+
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.saved', array(), 'MvBlogBundle'));
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.message_notice', array(), 'MvBlogBundle'));
     
             return $this->redirect($this->generateUrl('blog_post_show', $entity->getRoutingParams()));
         }
@@ -178,9 +179,9 @@ class DefaultController extends Controller
             if($comment->getPublied() === null){
                 $comment->setPublied(new \DateTime('now'));
                 $em->flush();
-                $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.confirmed'));
+                $this->get('session')->getFlashBag()->add('notice', $t->trans('default.comment.confirmed', array(), 'MvBlogBundle'));
             }else
-                $this->get('session')->getFlashBag()->add('error', $t->trans('default.comment.confirmed'));
+                $this->get('session')->getFlashBag()->add('error', $t->trans('default.comment.confirmed', array(), 'MvBlogBundle'));
                 
             return $this->redirect($this->generateUrl('blog_post_show', $comment->getPost()->getRoutingParams()));
         }
