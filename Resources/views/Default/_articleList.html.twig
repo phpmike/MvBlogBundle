@@ -13,7 +13,7 @@
       {% if entity.commentsPublied|length == 0 %}
         {% set link_comment = 'default.no_comments'|trans({}, 'MvBlogBundle') %}
       {% else %}
-        {% set word_comment = " commentaire" %}
+        {% set word_comment = ' ' ~ 'default.comments'|trans({}, 'MvBlogBundle') %}
         {% if entity.commentsPublied|length > 1 %}
             {% set word_comment = word_comment ~ "s" %}
         {% endif %}

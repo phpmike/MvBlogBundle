@@ -23,6 +23,7 @@ admin:
         create: Créer une nouvelle catégorie
         description: Description
         created: Votre catégorie est créée.
+        title_edit: Modifier la catégorie
     comment:
         title: Liste des commentaires
         pseudo: Pseudo
@@ -42,6 +43,7 @@ admin:
 default:
     lastupdate_on: Dernière mise à jour le %date% à %time%
     no_comments: Il n'y a aucun commentaire pour cet article
+    comments: commentaire
     no_article: Il n'y a aucun article !
     readmore: Lire la suite
     comment_published_at: Le %date% à %time% %name% a écrit

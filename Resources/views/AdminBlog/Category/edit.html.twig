@@ -1,5 +1,5 @@
 {% extends 'MvBlogBundle::admin-layout.html.twig' %}
-{% set page_title = 'Modifier la catégorie "' ~ entity.title ~ '"' %}
+{% set page_title = 'admin.category.title_edit'|trans({}, 'MvBlogBundle') ~ ' "' ~ entity.title ~ '"' %}
 
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 

@@ -23,6 +23,7 @@ admin:
         create: Create new category
         description: Description
         created: Your categtory has been created.
+        title_edit: Edit category
     comment:
         title: Comments list
         pseudo: Name
@@ -42,6 +43,7 @@ admin:
 default:
     lastupdated_on: Last updated at %date% at %time%
     no_comments: There are no comments for this article
+    comments: comment
     no_article: There is no article!
     readmore: Read more
     comment_published_at: On %date% at %time% %name% wrote
