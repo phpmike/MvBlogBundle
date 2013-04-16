@@ -64,7 +64,7 @@ default:
                 Reminder of your comment:
                 %message%
 
-                Link to the article in question:Link to the article in question:
+                Link to the article in question:
                 %url_article%
 
         saved: Your comment has been saved.
