@@ -1,5 +1,5 @@
 {% extends 'MvBlogBundle::admin-layout.html.twig' %}
-{% set page_title = 'Administration du blog' %}
+{% set page_title = 'admin.secured.title'|trans({}, 'MvBlogBundle') %}
 
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 
@@ -7,6 +7,6 @@
 <h1>{{ page_title }}</h1>
 
 <p>
-Depuis cet espace, vous pouvez gérer vos articles, les catégories du blog, etc...    
+    {{ 'admin.secured.index'|trans({}, 'MvBlogBundle') }}
 </p>
 {% endblock %}

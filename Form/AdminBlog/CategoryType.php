@@ -12,14 +12,15 @@ class CategoryType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', null, array('label' => 'Titre'))
+            ->add('title', null, array('label' => 'form.category.title', 'translation_domain' => 'MvBlogBundle'))
             ->add('description')
         ;
         // Peut appartenir à une Root category seulement si c'en est pas déjà une avec des enfants ou si elle est nouvelle
         // Ne peut pas être un enfant de lui-même
         if(!$builder->getData()->getId() || !$builder->getData()->getChildren()->count()){
             $builder
-                    ->add('parent',null,array('label'         => 'Catégorie parente',
+                    ->add('parent',null,array('label' => 'form.category.parent',
+                                              'translation_domain' => 'MvBlogBundle',
                                               'query_builder' => function(NestedTreeRepository $er) use ($builder)
                                                                             {
                                                                             if(!$builder->getData()->getId())

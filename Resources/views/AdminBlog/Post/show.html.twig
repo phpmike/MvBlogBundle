@@ -1,5 +1,5 @@
 {% extends 'MvBlogBundle::admin-layout.html.twig' %}
-{% set page_title = 'Voir ' ~ entity.title %}
+{% set page_title = 'admin.post.view'|trans({}, 'MvBlogBundle') ~ ' ' ~ entity.title %}
 
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 
@@ -8,19 +8,19 @@
 <ul class="record_actions">
     <li>
         <a href="{{ path('badp_post') }}">
-            Retour à la liste
+            {{ 'admin.back'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
     <li>
         <form action="{{ path('badp_post_edit', { 'id': entity.id }) }}" method="get">
-            <button type="submit">Modifier</button>
+            <button type="submit">{{ 'admin.modify'|trans({}, 'MvBlogBundle') }}</button>
         </form>
     </li>
     <li>
         <form action="{{ path('badp_post_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
-            <button type="submit">Supprimer</button>
+            <button type="submit">{{ 'admin.remove'|trans({}, 'MvBlogBundle') }}</button>
         </form>
     </li>
 </ul>

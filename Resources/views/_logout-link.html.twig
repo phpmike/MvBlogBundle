@@ -1,4 +1,4 @@
 {#
 Surcharge this template in app/Resources/MvBlogBundle/views/_logout-link.html.twig and change path logout by yours
 #}
-<a href="{{ path('_badp_logout') }}">Déconnexion ({{ app.user.username }})</a>
+<a href="{{ path('_badp_logout') }}">{{ 'admin.logout'|trans({}, 'MvBlogBundle') }} ({{ app.user.username }})</a>

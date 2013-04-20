@@ -1,0 +1,91 @@
+menu:
+    welcome: Welcome
+
+admin:
+    view: View my blog
+    categories: Categories
+    posts: Posts
+    comments: Comments
+    back: Back to list
+    register: Register
+    remove: Remove
+    modify: Modify
+    actions: Actions
+    title: Title
+    logout: Logout
+    form_submit_success: Your changes have been saved.
+    form_submit_error: There are errors in the submitted form!
+    secured:
+        title: Blog Administration
+        index: From this section you can manage your posts, categories blog, etc ...
+    category:
+        title: Category list
+        create: Create new category
+        description: Description
+        created: Your categtory has been created.
+        title_edit: Edit category
+    comment:
+        title: Comments list
+        pseudo: Name
+        email: Email
+        comment: Comment
+        writes: Writes
+        title: Edit Comment
+    post:
+        title: Posts list
+        title_edit: Edit post
+        published_at: Post published on %date% at %time%
+        create: Create a new post
+        created: Created
+        modified: Modified
+        view: View
+        has_been_created: Your post has been created.
+        edit: Edit
+
+default:
+    lastupdated_on: Last updated at %date% at %time%
+    no_comments: There are no comments for this article
+    comments: comment
+    no_article: There is no article!
+    readmore: Read more
+    comment_published_at: On %date% at %time% %name% wrote
+    comment:
+        email:
+            subject: Publication of your comment
+            message: |
+                You are receiving this email because a comment was posted on our blog.
+
+                We ask you to confirm your comment by clicking this link:
+
+                %url%
+
+                If the link is not clickable, please copy the above url in the address bar of your browser.
+
+                Reminder of your comment:
+                %message%
+
+                Link to the article in question:
+                %url_article%
+
+        saved: Your comment has been saved.
+        message_notice: You will receive a message asking you to confirm its publication.
+        confirmed: Your comment has been confirmed!
+        submit: Submit
+        legend: Comment on post
+
+form:
+    comment:
+        website: Website
+        comment: Comment
+        published: Published
+    category:
+        title: Title
+        parent: Parent category
+    post:
+        title: Title
+        hang: Hang
+        categories: Categorie(s)
+        publication: Published On
+
+
+

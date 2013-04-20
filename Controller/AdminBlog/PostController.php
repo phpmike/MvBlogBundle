@@ -54,6 +54,8 @@ class PostController extends Controller
      */
     public function createAction(Request $request)
     {
+        $t = $this->get('translator');
+
         $entity  = new Post();
         $form = $this->createForm(new PostType(), $entity);
         $form->bind($request);
@@ -62,11 +64,11 @@ class PostController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', "Votre article est créé.");
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.post.has_been_created', array(), 'MvBlogBundle'));
 
             return $this->redirect($this->generateUrl('badp_post_show', array('id' => $entity->getId())));
         }
-        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity' => $entity,
@@ -158,6 +160,7 @@ class PostController extends Controller
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
+        $t = $this->get('translator');
 
         $entity = $em->getRepository('MvBlogBundle:AdminBlog\Post')->find($id);
 
@@ -172,11 +175,11 @@ class PostController extends Controller
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('notice', "Vos modifications ont été enregistrées.");
+            $this->get('session')->getFlashBag()->add('notice', $t->trans('admin.form_submit_success', array(), 'MvBlogBundle'));
 
             return $this->redirect($this->generateUrl('badp_post_show', array('id' => $id)));
         }
-        $this->get('session')->getFlashBag()->add('error', "Il y a des erreurs dans le formulaire soumis !");
+        $this->get('session')->getFlashBag()->add('error', $t->trans('admin.form_submit_error', array(), 'MvBlogBundle'));
 
         return array(
             'entity'      => $entity,

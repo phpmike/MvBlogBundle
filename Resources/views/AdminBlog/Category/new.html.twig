@@ -1,5 +1,5 @@
 {% extends 'MvBlogBundle::admin-layout.html.twig' %}
-{% set page_title = 'Liste des catégories' %}
+{% set page_title = 'admin.category.create'|trans({}, 'MvBlogBundle') %}
 
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 
@@ -12,10 +12,10 @@
 <ul class="record_actions">
     <li>
         <a href="{{ path('badp_category') }}">
-            Retour à la liste
+            {{ 'admin.back'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
-    <li><button type="submit">Enregistrer</button></li>
+    <li><button type="submit">{{ 'admin.register'|trans({}, 'MvBlogBundle') }}</button></li>
 </ul>
 </form>
 {% endblock %}

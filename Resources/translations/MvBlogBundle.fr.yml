@@ -1,0 +1,90 @@
+menu:
+    welcome: Accueil
+
+admin:
+    view: Voir mon blog
+    categories: Catégories
+    posts: Articles
+    comments: Commentaires
+    back: Retour à la liste
+    register: Enregistrer
+    remove: Supprimer
+    modify: Modifier
+    actions: Actions
+    title: Titre
+    logout: Déconnexion
+    form_submit_success: Vos modifications ont été enregistrées.
+    form_submit_error: Il y a des erreurs dans le formulaire soumis!
+    secured:
+        title: Administration du blog
+        index: Depuis cet espace, vous pouvez gérer vos articles, les catégories du blog, etc...
+    category:
+        title: Liste des catégories
+        create: Créer une nouvelle catégorie
+        description: Description
+        created: Votre catégorie est créée.
+        title_edit: Modifier la catégorie
+    comment:
+        title: Liste des commentaires
+        pseudo: Pseudo
+        email: Email
+        comment: Commentaire
+        writes: Écrit le
+        title: Modifier le commentaire de
+    post:
+        title: Liste des articles
+        title_edit: Modifier l'article
+        published_at: Article publié le %date% à %time%
+        create: Créer un nouvel article
+        created: Créé le
+        modified: Modifié le
+        view: Voir
+        has_been_created: Votre article est créé.
+        edit: Modifier
+
+default:
+    lastupdate_on: Dernière mise à jour le %date% à %time%
+    no_comments: Il n'y a aucun commentaire pour cet article
+    comments: commentaire
+    no_article: Il n'y a aucun article !
+    readmore: Lire la suite
+    comment_published_at: Le %date% à %time% %name% a écrit
+    comment:
+        email:
+            subject: Publication de votre commentaire
+            message: |
+              Vous recevez cet email parce qu'un commentaire a été publié sur notre blog.
+
+              Nous vous demandons de confirmer votre commentaire en cliquant sur ce lien :
+
+              %url%
+
+              Si le lien n'est pas cliquable, merci de le copier dans la barre d'adresse de votre navigateur.
+
+              Rappel de votre commentaire :
+              %message%
+
+              Lien vers l'article concerné :
+              %url_article%
+
+        saved: Votre commentaire est enregistré.
+        message_notice: Vous allez recevoir un message vous demandant de confirmer sa publication.
+        confirmed: Votre commentaire a déjà été confirmé!
+        submit: Envoyer
+        legend: Commenter l'article
+
+form:
+    comment:
+        website: Site web
+        comment: Commentaire
+        published: Publié le
+    category:
+        title: Titre
+        parent: Catégorie parente
+    post:
+        title: Titre
+        hang: Accroche
+        categories: Catégorie(s)
+        publication: Publication le
+
+
