@@ -13,11 +13,8 @@
       {% if entity.commentsPublied|length == 0 %}
         {% set link_comment = 'default.no_comments'|trans({}, 'MvBlogBundle') %}
       {% else %}
-        {% set word_comment = ' ' ~ 'default.comments'|trans({}, 'MvBlogBundle') %}
-        {% if entity.commentsPublied|length > 1 %}
-            {% set word_comment = word_comment ~ "s" %}
-        {% endif %}
-        {% set link_comment = '<a href="' ~ path('blog_post_show', entity.routingParams) ~ '#blog_comments">' ~ entity.commentsPublied|length ~ word_comment ~ '</a>' %}
+        {% set word_comment = 'default.comments'|transchoice(entity.commentsPublied|length,{'%count%':entity.commentsPublied|length}, 'MvBlogBundle') %}
+        {% set link_comment = '<a href="' ~ path('blog_post_show', entity.routingParams) ~ '#blog_comments">' ~ word_comment ~ '</a>' %}
       {% endif %}
       
       {% include 'MvBlogBundle:Default:_articleCategories.html.twig' with {'entity': entity} %}

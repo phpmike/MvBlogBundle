@@ -1,0 +1,91 @@
+menu:
+    welcome: Home
+
+admin:
+    view: Vedere il mio blog
+    categories: Categorie
+    posts: Articoli
+    comments: Commentarii
+    back: Ritorno alla lista
+    register: Salvare
+    remove: Sopprimere
+    modify: Modificare
+    actions: Interventi
+    title: Titolo
+    logout: Disconnettersi
+    form_submit_success: Le modifiche sono state salvate.
+    form_submit_error: Ci sono errori nel form inviato!
+    secured:
+        title: Amministrazione blog
+        index: Da questo spazio, è possibile gestire i vostri articoli, categorie, blog, ecc...
+    category:
+        title: Lista delle categorie
+        create: Creare una nuova categoria
+        description: Descrizione
+        created: La categoria è stata creata.
+        title_edit: Modificare la categoria
+    comment:
+        title: Lista dei commentarii
+        pseudo: Pseudo
+        email: Email
+        comment: Commentario
+        writes: Scritto il
+        title: Modificare il commentario di
+    post:
+        title: Lista dei articoli
+        title_edit: Modificare l'articolo
+        published_at: Articolo publicato su %date% alle %time%
+        create: Creare uno nuovo articolo
+        created: Creato
+        modified: Modificato
+        view: Vedere
+        has_been_created: L'articolo è stato creato.
+        edit: Modificare
+
+default:
+    lastupdated_on: Ultimo aggiornamento il %date% alle %time%
+    no_comments: Non ci sono commenti per questo articolo
+    comments: '{0}|{1}%count% commentario|]1,Inf[%count% commentarii'
+    no_article: Al momento non ci sono!
+    readmore: Leggi tutto
+    comment_published_at: Il %date% alle %time% %name% a scritto
+    comment:
+        email:
+            subject: Pubblicazione del commento
+            message: |
+              Ha ricevuto questa email perché uno commento è stato postato sul nostro blog.
+
+              La chiediamo di confermare il suo commento cliccando su questo link :
+
+              %url%
+
+              Se il link non è cliccabile, grazie copiarlo nella barra degli indirizzi del suo browser.
+
+              Ricordo del commento :
+              %message%
+
+              Link per l'articolo in questione :
+              %url_article%
+
+        saved: Il suo commentario è stato salvato.
+        message_notice: Si riceverà un messaggio che chiede di confermare la sua pubblicazione.
+        confirmed: Il tuo commento è stato confermato!
+        submit: Mandare
+        legend: Commentare l'articolo
+
+form:
+    comment:
+        website: Sito
+        comment: Commentario
+        published: Publicato
+    category:
+        title: Titolo
+        description: Descrizione
+        parent: Categoria superiore
+    post:
+        title: Titolo
+        hang: Frase introduttiva
+        categories: Categoria(e)
+        publication: Publicato
+
+

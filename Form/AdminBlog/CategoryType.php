@@ -13,7 +13,7 @@ class CategoryType extends AbstractType
     {
         $builder
             ->add('title', null, array('label' => 'form.category.title', 'translation_domain' => 'MvBlogBundle'))
-            ->add('description')
+            ->add('description', null, array('label' => 'form.category.description', 'translation_domain' => 'MvBlogBundle'))
         ;
         // Peut appartenir à une Root category seulement si c'en est pas déjà une avec des enfants ou si elle est nouvelle
         // Ne peut pas être un enfant de lui-même

@@ -45,7 +45,7 @@ admin:
 default:
     lastupdated_on: Last updated at %date% at %time%
     no_comments: There are no comments for this article
-    comments: comment
+    comments: '{0}|{1}%count% comment|]1,Inf[%count% comments'
     no_article: There is no article!
     readmore: Read more
     comment_published_at: On %date% at %time% %name% wrote
@@ -80,6 +80,7 @@ form:
         published: Published
     category:
         title: Title
+        description: Description
         parent: Parent category
     post:
         title: Title

@@ -45,7 +45,7 @@ admin:
 default:
     lastupdated_on: Dernière mise à jour le %date% à %time%
     no_comments: Il n'y a aucun commentaire pour cet article
-    comments: commentaire
+    comments: '{0}|{1}%count% commentaire|]1,Inf[%count% commentaires'
     no_article: Il n'y a aucun article !
     readmore: Lire la suite
     comment_published_at: Le %date% à %time% %name% a écrit
@@ -80,6 +80,7 @@ form:
         published: Publié le
     category:
         title: Titre
+        description: Description
         parent: Catégorie parente
     post:
         title: Titre
