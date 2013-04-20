@@ -43,7 +43,7 @@ admin:
         edit: Modifier
 
 default:
-    lastupdate_on: Dernière mise à jour le %date% à %time%
+    lastupdated_on: Dernière mise à jour le %date% à %time%
     no_comments: Il n'y a aucun commentaire pour cet article
     comments: commentaire
     no_article: Il n'y a aucun article !
