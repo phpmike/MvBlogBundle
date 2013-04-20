@@ -1,5 +1,5 @@
 {% extends 'MvBlogBundle::admin-layout.html.twig' %}
-{% set page_title = 'Liste des articles' %}
+{% set page_title = 'admin.post.title'|trans({}, 'MvBlogBundle') %}
 
 {% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
 
@@ -9,7 +9,7 @@
 <ul class="record_actions">
     <li>
         <a href="{{ path('badp_post_new') }}">
-            Créer un nouvel article
+            {{ 'admin.post.create'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
 </ul>
@@ -20,11 +20,11 @@
 <table class="records_list">
     <thead>
         <tr>
-            <th>Catégories</th>
-            <th>Titre</th>
-            <th>Créé le</th>
-            <th>Modifié le</th>
-            <th>Actions</th>
+            <th>{{ 'admin.categories'|trans({}, 'MvBlogBundle') }}</th>
+            <th>{{ 'admin.title'|trans({}, 'MvBlogBundle') }}</th>
+            <th>{{ 'admin.post.created'|trans({}, 'MvBlogBundle') }}</th>
+            <th>{{ 'admin.post.modified'|trans({}, 'MvBlogBundle') }}</th>
+            <th>{{ 'admin.actions'|trans({}, 'MvBlogBundle') }}</th>
         </tr>
     </thead>
     <tbody>
@@ -37,10 +37,10 @@
             <td>
                 <ul class="records_list_actions">
                     <li>
-                        <a href="{{ path('badp_post_show', { 'id': entity.id }) }}">Voir</a>
+                        <a href="{{ path('badp_post_show', { 'id': entity.id }) }}">{{ 'admin.post.view'|trans({}, 'MvBlogBundle') }}</a>
                     </li>
                     <li>
-                        <a href="{{ path('badp_post_edit', { 'id': entity.id }) }}">Modifier</a>
+                        <a href="{{ path('badp_post_edit', { 'id': entity.id }) }}">{{ 'admin.post.edit'|trans({}, 'MvBlogBundle') }}</a>
                     </li>
                 </ul>
             </td>
@@ -55,7 +55,7 @@
 <ul class="record_actions">
     <li>
         <a href="{{ path('badp_post_new') }}">
-            Créer un nouvel article
+            {{ 'admin.post.create'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
 </ul>

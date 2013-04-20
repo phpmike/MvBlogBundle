@@ -13,10 +13,10 @@
   <div id="mv_blog_page">
     <div id="mv_blog_menu_left">
     <ul>
-      <li><a href="{{ path('blog_homepage') }}">Voir mon blog</a></li>
-      <li><a href="{{ path('badp_category') }}">Catégories</a></li>
-      <li><a href="{{ path('badp_post') }}">Articles</a></li>
-      <li><a href="{{ path('badp_comment') }}">Commentaires</a></li>
+      <li><a href="{{ path('blog_homepage') }}">{{ 'admin.view'|trans({}, 'MvBlogBundle') }}</a></li>
+      <li><a href="{{ path('badp_category') }}">{{ 'admin.categories'|trans({}, 'MvBlogBundle') }}</a></li>
+      <li><a href="{{ path('badp_post') }}">{{ 'admin.posts'|trans({}, 'MvBlogBundle') }}</a></li>
+      <li><a href="{{ path('badp_comment') }}">{{ 'admin.comments'|trans({}, 'MvBlogBundle') }}</a></li>
       <li>{% include "MvBlogBundle::_logout-link.html.twig" %}</li>
     </ul>
     </div>
