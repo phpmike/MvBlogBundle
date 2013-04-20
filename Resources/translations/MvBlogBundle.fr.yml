@@ -14,7 +14,7 @@ admin:
     title: Titre
     logout: Déconnexion
     form_submit_success: Vos modifications ont été enregistrées.
-    form_submit_error: Il y a des erreurs dans le formulaire soumis!
+    form_submit_error: Il y a des erreurs dans le formulaire soumis !
     secured:
         title: Administration du blog
         index: Depuis cet espace, vous pouvez gérer vos articles, les catégories du blog, etc...
@@ -69,7 +69,7 @@ default:
 
         saved: Votre commentaire est enregistré.
         message_notice: Vous allez recevoir un message vous demandant de confirmer sa publication.
-        confirmed: Votre commentaire a déjà été confirmé!
+        confirmed: Votre commentaire a déjà été confirmé !
         submit: Envoyer
         legend: Commenter l'article
 
