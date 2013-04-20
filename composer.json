@@ -9,6 +9,11 @@
         {
             "name": "Michaël VEROUX",
             "homepage": "https://github.com/phpmike"
+        },
+        {
+            "name": "Jarrett Croll",
+            "homepage": "https://github.com/jcroll",
+            "role": "Translator"
         }
     ],
     "require": {
