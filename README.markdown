@@ -5,6 +5,8 @@ Blog Bundle for symfony2 v2.2 (v2.1 are tagged 1.0.x)
 
 If you're upgrading from 1.0.x, see "[UPGRADE-1.2](https://github.com/phpmike/MvBlogBundle/blob/master/Resources/Doc/UPGRADE-1.2.markdown)"
 
+If you're upgrading from <= 1.2.1, see "[UPGRADE-1.2.2](https://github.com/phpmike/MvBlogBundle/blob/master/Resources/Doc/UPGRADE-1.2.2.markdown)"
+
 [![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
 
 Features include:
