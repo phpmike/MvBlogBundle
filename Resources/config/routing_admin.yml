@@ -1,0 +1,79 @@
+badp_category:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:index" }
+  pattern:      "/category/"
+  requirements: { _method: GET }
+  
+badp_category_create:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:create" }
+  pattern:      "/category/"
+  requirements: { _method: POST }
+  
+badp_category_new:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:new" }
+  pattern:      "/category/new"
+  requirements: { _method: GET }
+  
+badp_category_edit:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:edit" }
+  pattern:      "/category/{id}/edit"
+  requirements: { _method: GET }
+  
+badp_category_update:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:update" }
+  pattern:      "/category/{id}"
+  requirements: { _method: PUT }
+  
+badp_category_delete:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:delete" }
+  pattern:      "/category/{id}"
+  requirements: { _method: DELETE }
+  
+badp_comment:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:index" }
+  pattern:      "/comment/"
+  requirements: { _method: GET }
+  
+badp_comment_edit:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:edit" }
+  pattern:      "/comment/{id}/edit"
+  requirements: { _method: GET }
+  
+badp_comment_update:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:update" }
+  pattern:      "/comment/{id}"
+  requirements: { _method: PUT }
+  
+badp_comment_delete:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:delete" }
+  pattern:      "/comment/{id}"
+  requirements: { _method: DELETE }
+  
+bapd_post:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:index" }
+  pattern:      "/post/"
+  requirements: { _method: GET }
+  
+bapd_post_create:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:create" }
+  pattern:      "/post/"
+  requirements: { _method: POST }
+  
+bapd_post_new:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:new" }
+  pattern:      "/post/new"
+  requirements: { _method: GET }
+  
+bapd_post_edit:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:edit" }
+  pattern:      "/post/{id}/edit"
+  requirements: { _method: GET }
+  
+bapd_post_update:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:update" }
+  pattern:      "/post/{id}"
+  requirements: { _method: PUT }
+  
+bapd_post_delete:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:delete" }
+  pattern:      "/post/{id}"
+  requirements: { _method: DELETE }

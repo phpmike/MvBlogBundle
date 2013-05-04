@@ -4,8 +4,6 @@ namespace Mv\BlogBundle\Controller\AdminBlog;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Mv\BlogBundle\Entity\AdminBlog\Post;
 use Mv\BlogBundle\Form\AdminBlog\PostType;
@@ -13,8 +11,6 @@ use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Blog\Post controller.
- *
- * @Route("/badp/post")
  */
 class PostController extends Controller
 {
@@ -22,8 +18,6 @@ class PostController extends Controller
      * Lists all Blog\Post entities.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/", name="badp_post")
-     * @Method("GET")
      * @Template()
      */
     public function indexAction()
@@ -48,8 +42,6 @@ class PostController extends Controller
      * Creates a new Blog\Post entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/", name="badp_post_create")
-     * @Method("POST")
      * @Template("MvBlogBundle:AdminBlog\Post:new.html.twig")
      */
     public function createAction(Request $request)
@@ -80,8 +72,6 @@ class PostController extends Controller
      * Displays a form to create a new Blog\Post entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/new", name="badp_post_new")
-     * @Method("GET")
      * @Template()
      */
     public function newAction()
@@ -99,8 +89,6 @@ class PostController extends Controller
      * Finds and displays a Blog\Post entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}", name="badp_post_show")
-     * @Method("GET")
      * @Template()
      */
     public function showAction($id)
@@ -125,8 +113,6 @@ class PostController extends Controller
      * Displays a form to edit an existing Blog\Post entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}/edit", name="badp_post_edit")
-     * @Method("GET")
      * @Template()
      */
     public function editAction($id)
@@ -153,8 +139,6 @@ class PostController extends Controller
      * Edits an existing Blog\Post entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}", name="badp_post_update")
-     * @Method("PUT")
      * @Template("MvBlogBundle:AdminBlog\Post:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
@@ -192,8 +176,6 @@ class PostController extends Controller
      * Deletes a Blog\Post entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}", name="badp_post_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
     {

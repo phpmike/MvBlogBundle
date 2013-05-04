@@ -3,9 +3,7 @@
 namespace Mv\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Mv\BlogBundle\Entity\AdminBlog\Category;
 use Mv\BlogBundle\Entity\AdminBlog\Post;
 use Mv\BlogBundle\Entity\AdminBlog\Comment;
@@ -18,12 +16,10 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 /**
  * DefaultController controller.
  *
- * @Route("/blog")
  */
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="blog_homepage")
      * @Template()
      */
     public function homepageAction()
@@ -45,8 +41,6 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/{id}-{slug}/", requirements={"slug" = "[a-z0-9\-]+", "id" = "^\d+$" }, name="blog_category_list")
-     * @Route("/category/{id}")
      * @Template()
      */
     public function categoryAction(Category $category)
@@ -86,10 +80,6 @@ class DefaultController extends Controller
 
     /**
      * Finds and displays a Blog\Post entity.
-     *
-     * @Route("/{category_id}-{category}/{id}-{slug}.html", requirements={"slug" = "[a-z0-9\-]+", "category" = "[a-z0-9\-]+", "id" = "^\d+$", "category_id" = "^\d+$" }, name="blog_post_show")
-     * @Route("/article/{id}")
-     * @Method("GET")
      * @Template()
      */
     public function showArticleAction(Post $post)
@@ -112,9 +102,6 @@ class DefaultController extends Controller
     }
 
     /**
-     *
-     * @Route("/com-article/{id}", name="blog_post_comment")
-     * @Method("POST")
      * @Template("MvBlogBundle:Default:showArticle.html.twig")
      */
     public function addCommentAction(Post $entity, Request $request){
@@ -163,9 +150,6 @@ class DefaultController extends Controller
     }
 
     /**
-     *
-     * @Route("/com-confirm/{email}/{token}", name="blog_post_comment_confirm")
-     * @Method("GET")
      * @Template()
      */
     public function commentConfirmAction($email, $token){

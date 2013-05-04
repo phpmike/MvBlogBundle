@@ -4,18 +4,12 @@ namespace Mv\BlogBundle\Controller\AdminBlog;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
-/**
- * @Route("/badp")
- */
 class SecuredController extends Controller
 {
     /**
-     * @Route("/login", name="_badp_login")
      * @Template()
      */
     public function loginAction()
@@ -39,8 +33,6 @@ class SecuredController extends Controller
     /**
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/", name="badp_home")
-     * @Method("GET")
      * @Template()
      */
     public function indexAction()
@@ -48,17 +40,11 @@ class SecuredController extends Controller
         return array();
     }
 
-    /**
-     * @Route("/login_check", name="_badp_security_check")
-     */
     public function securityCheckAction()
     {
         // The security layer will intercept this request
     }
 
-    /**
-     * @Route("/logout", name="_badp_logout")
-     */
     public function logoutAction()
     {
         // The security layer will intercept this request

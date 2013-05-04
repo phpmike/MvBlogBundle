@@ -1,7 +1,38 @@
-mv_blog:
-    resource: "@MvBlogBundle/Controller/"
-    type:     annotation
-    prefix:   /
+blog_homepage:
+  defaults:     { _controller: "MvBlogBundle:Default:homepage" }
+  pattern:      "/"
+  requirements: { _method: GET }
+  
+blog_category_list:
+  defaults:     { _controller: "MvBlogBundle:Default:category" }
+  pattern:      "/{id}-{slug}/"
+  requirements:
+    _method: GET
+    slug: "[a-z0-9\\-]+"
+    id: "^\\d+$"
+  
+blog_post_show:
+  defaults:     { _controller: "MvBlogBundle:Default:showArticle" }
+  pattern:      "/{category_id}-{category}/{id}-{slug}.html"
+  requirements:
+    _method: GET
+    slug: "[a-z0-9\\-]+"
+    category: "[a-z0-9\\-]+"
+    id: "^\\d+$"
+    category_id: "^\\d+$"
+  
+blog_post_comment:
+  defaults:     { _controller: "MvBlogBundle:Default:addComment" }
+  pattern:      "/com-article/{id}"
+  requirements:
+    _method: POST
+    id: "^\\d+$"
+  
+blog_post_comment_confirm:
+  defaults:     { _controller: "MvBlogBundle:Default:commentConfirm" }
+  pattern:      "/com-confirm/{email}/{token}"
+  requirements:
+    _method: GET
 
 elfinder:
     resource: "@FMElfinderBundle/Resources/config/routing.yml"

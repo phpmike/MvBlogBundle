@@ -53,9 +53,18 @@ You can do it by adding this option to your "extra" key in composer.json
     new FM\ElfinderBundle\FMElfinderBundle(),
 
 ###3)  Add to routing.yml
- 
+
+For front pages
+
     mv_blog:
         resource: "@MvBlogBundle/Resources/config/routing.yml"
+        prefix: /blog
+
+For admin pages
+
+    mv_blog_admin:
+        resource: "@MvBlogBundle/Resources/config/routing_admin.yml"
+        prefix: /badp
 
 ###4)  See `Resources/Example/security.yml.example` to configure access to the admin panel
 
@@ -100,6 +109,12 @@ Read this "[YUI Compressor](http://symfony.com/doc/current/cookbook/assetic/yuic
 ###7)  You have to implement (if you don't have yet) an user management
 
 You have access to admin panel in dev mode to see it, but you can't keep it in production mode.
+To have routes for dev mode, you have to add in your app routing_dev.yml:
+
+    mv_blog_secure:
+        resource: "@MvBlogBundle/Resources/config/routing_dev.yml"
+        prefix: /badp
+
 ex: FOSUserBundle can help you.
 
 Surcharge app/Resources/MvBlogBundle/views/_logout-link.html.twig to have your logout link.  

@@ -4,17 +4,12 @@ namespace Mv\BlogBundle\Controller\AdminBlog;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Mv\BlogBundle\Entity\AdminBlog\Comment;
 use Mv\BlogBundle\Form\AdminBlog\CommentType;
 use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * AdminBlog\Comment controller.
- *
- * @Route("/badp/comment")
  */
 class CommentController extends Controller
 {
@@ -22,7 +17,6 @@ class CommentController extends Controller
      * Lists all AdminBlog\Comment entities.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/", name="badp_comment")
      * @Template()
      */
     public function indexAction()
@@ -47,7 +41,6 @@ class CommentController extends Controller
      * Displays a form to edit an existing AdminBlog\Comment entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}/edit", name="badp_comment_edit")
      * @Template()
      */
     public function editAction($id)
@@ -74,8 +67,6 @@ class CommentController extends Controller
      * Edits an existing AdminBlog\Comment entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}/update", name="badp_comment_update")
-     * @Method("POST")
      * @Template("MvBlogBundle:AdminBlog\Comment:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
@@ -113,8 +104,6 @@ class CommentController extends Controller
      * Deletes a AdminBlog\Comment entity.
      *
      * @Secure(roles="ROLE_ADMIN")
-     * @Route("/{id}/delete", name="badp_comment_delete")
-     * @Method("POST")
      */
     public function deleteAction(Request $request, $id)
     {
