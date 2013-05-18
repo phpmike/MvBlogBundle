@@ -6,11 +6,6 @@ _badp_logout:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Secured:logout" }
   pattern:      "/logout"
   
-badp_home:
-  defaults:     { _controller: "MvBlogBundle:AdminBlog/Secured:index" }
-  pattern:      "/"
-  requirements: { _method: GET }
-  
 _badp_security_check:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Secured:securityCheck" }
   pattern:      "/login_check"

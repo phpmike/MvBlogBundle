@@ -1,3 +1,8 @@
+badp_home:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Secured:index" }
+  pattern:      "/"
+  requirements: { _method: GET }
+  
 badp_category:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:index" }
   pattern:      "/category/"
