@@ -16,17 +16,17 @@ badp_category_new:
 badp_category_edit:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:edit" }
   pattern:      "/category/{id}/edit"
-  requirements: { _method: GET }
+  requirements: { _method: GET, id: "^\\d+$" }
   
 badp_category_update:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:update" }
   pattern:      "/category/{id}"
-  requirements: { _method: PUT }
+  requirements: { _method: PUT, id: "^\\d+$" }
   
 badp_category_delete:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Category:delete" }
   pattern:      "/category/{id}"
-  requirements: { _method: DELETE }
+  requirements: { _method: DELETE, id: "^\\d+$" }
   
 badp_comment:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:index" }
@@ -36,17 +36,17 @@ badp_comment:
 badp_comment_edit:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:edit" }
   pattern:      "/comment/{id}/edit"
-  requirements: { _method: GET }
+  requirements: { _method: GET, id: "^\\d+$" }
   
 badp_comment_update:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:update" }
   pattern:      "/comment/{id}"
-  requirements: { _method: PUT }
+  requirements: { _method: PUT, id: "^\\d+$" }
   
 badp_comment_delete:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Comment:delete" }
   pattern:      "/comment/{id}"
-  requirements: { _method: DELETE }
+  requirements: { _method: DELETE, id: "^\\d+$" }
   
 badp_post:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:index" }
@@ -56,7 +56,7 @@ badp_post:
 badp_post_show:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:show" }
   pattern:      "/post/{id}"
-  requirements: { _method: GET }
+  requirements: { _method: GET, id: "^\\d+$" }
   
 badp_post_create:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:create" }
@@ -71,14 +71,14 @@ badp_post_new:
 badp_post_edit:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:edit" }
   pattern:      "/post/{id}/edit"
-  requirements: { _method: GET }
+  requirements: { _method: GET, id: "^\\d+$" }
   
 badp_post_update:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:update" }
   pattern:      "/post/{id}"
-  requirements: { _method: PUT }
+  requirements: { _method: PUT, id: "^\\d+$" }
   
 badp_post_delete:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:delete" }
   pattern:      "/post/{id}"
-  requirements: { _method: DELETE }
+  requirements: { _method: DELETE, id: "^\\d+$" }
