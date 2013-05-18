@@ -48,32 +48,37 @@ badp_comment_delete:
   pattern:      "/comment/{id}"
   requirements: { _method: DELETE }
   
-bapd_post:
+badp_post:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:index" }
   pattern:      "/post/"
   requirements: { _method: GET }
   
-bapd_post_create:
+badp_post_show:
+  defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:show" }
+  pattern:      "/post/{id}"
+  requirements: { _method: GET }
+  
+badp_post_create:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:create" }
   pattern:      "/post/"
   requirements: { _method: POST }
   
-bapd_post_new:
+badp_post_new:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:new" }
   pattern:      "/post/new"
   requirements: { _method: GET }
   
-bapd_post_edit:
+badp_post_edit:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:edit" }
   pattern:      "/post/{id}/edit"
   requirements: { _method: GET }
   
-bapd_post_update:
+badp_post_update:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:update" }
   pattern:      "/post/{id}"
   requirements: { _method: PUT }
   
-bapd_post_delete:
+badp_post_delete:
   defaults:     { _controller: "MvBlogBundle:AdminBlog/Post:delete" }
   pattern:      "/post/{id}"
   requirements: { _method: DELETE }
