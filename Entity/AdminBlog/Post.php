@@ -34,6 +34,7 @@ class Post
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(type="text")
      */
     private $accroche;
@@ -41,6 +42,7 @@ class Post
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(type="text")
      */
     private $article;
