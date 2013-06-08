@@ -1,17 +1,3 @@
-fm_elfinder:
-    locale: %locale%
-    editor: ckeditor
-    showhidden: false
-    connector:
-        debug: false
-        roots:
-            uploads:
-                driver: LocalFileSystem
-                path: bundles/mvblog/images
-                upload_allow: ['image/png', 'image/jpg', 'image/jpeg']
-                upload_deny: ['all']
-                upload_max_size: 2M
-
 ivory_ck_editor:
     configs:
         default:
@@ -41,6 +27,20 @@ ivory_ck_editor:
             styles:       [ 'Styles','Format','Font','FontSize' ]
             colors:       [ 'TextColor','BGColor' ]
             tools:        [ 'Maximize', 'ShowBlocks','-','About' ]
+
+fm_elfinder:
+    locale: %locale%
+    editor: ckeditor
+    showhidden: false
+    connector:
+        debug: false
+        roots:
+            uploads:
+                driver: LocalFileSystem
+                path: bundles/mvblog/images
+                upload_allow: ['image/png', 'image/jpg', 'image/jpeg']
+                upload_deny: ['all']
+                upload_max_size: 2M
 
 # Assetic Configuration
 assetic:

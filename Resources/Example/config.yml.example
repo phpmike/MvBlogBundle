@@ -27,3 +27,6 @@ mv_blog:
 
     # Affiche le bouton Recommander Facebook (Nécessite un API ID Facebook)
     facebook_api_id:        your_api_key
+
+assetic:
+    bundles:        [FMElfinderBundle]
