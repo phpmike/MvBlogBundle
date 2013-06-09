@@ -18,26 +18,21 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": ">=2.2@stable",
+        "symfony/symfony": "~2.2.0",
         "symfony/swiftmailer-bundle": "2.2.*",
-        "symfony/assetic-bundle": "2.1.*",
-        "doctrine/doctrine-bundle": "1.2.*",
+        "symfony/assetic-bundle": "~2.1",
+        "doctrine/doctrine-bundle": "~1.2",
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
-        "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
-        "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev",
         "knplabs/knp-paginator-bundle": "2.3.*",
-        "swiftmailer/swiftmailer": ">=4.2.0,<4.3-dev",
-        "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev",
         "gedmo/doctrine-extensions": "2.3.*",
         "egeloen/ckeditor-bundle": ">=2.1.3",
-        "helios-ag/fm-elfinder-bundle": "dev-master@dev",
-        "helios-ag/fm-elfinder": "2.*@dev"
+        "helios-ag/fm-elfinder-bundle": "~1.0"
     },
     "suggest": {
         "friendsofsymfony/user-bundle": "to use authentication"
     },
-    "minimum-stability": "alpha",
+    "minimum-stability": "beta",
     "extra": {
         "branch-alias": {
             "dev-master": "1.2.x-dev"

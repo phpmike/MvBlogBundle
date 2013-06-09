@@ -7,7 +7,13 @@ If you're upgrading from 1.0.x, see "[UPGRADE-1.2](https://github.com/phpmike/Mv
 
 If you're upgrading from <= 1.2.1, see "[UPGRADE-1.2.2](https://github.com/phpmike/MvBlogBundle/blob/master/Resources/Doc/UPGRADE-1.2.2.markdown)"
 
+If you're upgrading from <= 1.2.2, see "[UPGRADE-1.2.3](https://github.com/phpmike/MvBlogBundle/blob/master/Resources/Doc/UPGRADE-1.2.3.markdown)"
+
 [![Build Status](https://secure.travis-ci.org/phpmike/MvBlogBundle.png)](http://travis-ci.org/phpmike/MvBlogBundle)
+
+[![Total Downloads](https://poser.pugx.org/mv/mv-blog-bundle/d/total.png)](https://packagist.org/packages/mv/mv-blog-bundle)
+
+[![Latest Stable Version](https://poser.pugx.org/mv/mv-blog-bundle/version.png)](https://packagist.org/packages/mv/mv-blog-bundle)
 
 Features include:
 
@@ -27,17 +33,7 @@ You need have installed Symfony2 2.2 with Composer or have a composer.json file
 
 ###1)  Add to composer.json in the root `require` key  
 
-    "mv/mv-blog-bundle": "1.2.*@beta",
-    "helios-ag/fm-elfinder-bundle": "dev-master",
-    "helios-ag/fm-elfinder": "2.*@dev"
-
-The second & third requirement here because only dev version available for Symfony 2.2 and composer won't install with alpha minimal stability
-
-you need also have the root key:
-
-    "minimum-stability": "alpha",
-
-Because some dependencies are alpha version
+    "mv/mv-blog-bundle": "~1.2.3"
 
 **I deeply recommend to use symlinks for assets to non expose your images to be deleted**
 
