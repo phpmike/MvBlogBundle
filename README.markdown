@@ -33,10 +33,7 @@ You need have installed Symfony2 2.3 with Composer or have a composer.json file
 
 ###1)  Add to composer.json in the root `require` key  
 
-    "mv/mv-blog-bundle": "~1.3.0@stable",
-    "helios-ag/fm-elfinder-bundle": "dev-master"
-
-The second requirement here because only dev version available for Symfony 2.3 and composer won't install otherwise
+    "mv/mv-blog-bundle": "~1.3.0@stable"
 
 **I deeply recommend to use symlinks for assets to non expose your images to be deleted**
 
