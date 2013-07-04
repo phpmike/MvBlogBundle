@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * Category
  *
- * @ORM\Table()
+ * @ORM\Table(name="mv_blog_categories")
  * @Gedmo\Tree(type="nested")
  * use repository for handy tree functions
  * @ORM\Entity(repositoryClass="Gedmo\Tree\Entity\Repository\NestedTreeRepository")

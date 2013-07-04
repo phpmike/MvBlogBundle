@@ -11,7 +11,7 @@ use Symfony\Component\Validator\ExecutionContext;
 /**
  * Comment
  *
- * @ORM\Table()
+ * @ORM\Table(name="mv_blog_comments")
  * @ORM\Entity(repositoryClass="Mv\BlogBundle\Entity\AdminBlog\CommentRepository")
  * @Gedmo\SoftDeleteable(fieldName="deleted")
  * @Assert\Callback(methods={"validateIpControl"})
