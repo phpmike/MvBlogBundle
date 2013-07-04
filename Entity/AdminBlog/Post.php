@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints AS Assert;
 /**
  * Post
  *
- * @ORM\Table()
+ * @ORM\Table(name="mv_blog_posts")
  * @ORM\Entity(repositoryClass="Mv\BlogBundle\Entity\AdminBlog\PostRepository")
  */
 class Post
