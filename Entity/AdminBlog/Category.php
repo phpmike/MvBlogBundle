@@ -2,81 +2,59 @@
 
 namespace Mv\BlogBundle\Entity\AdminBlog;
 
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * Category
- *
- * @ORM\Table()
- * @Gedmo\Tree(type="nested")
- * use repository for handy tree functions
- * @ORM\Entity(repositoryClass="Gedmo\Tree\Entity\Repository\NestedTreeRepository")
+ * 
  */
 class Category
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(type="string", length=150)
      */
     private $title;
 
     /**
      * @var string
-     *
-     * @ORM\Column(type="text")
      */
     private $description;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Post", mappedBy="categories")
+     * @var \Doctrine\Common\Collections\Collection
      */
     private $posts;
 
     /**
-     * @Gedmo\TreeLeft
-     * @ORM\Column(name="lft", type="integer")
+     * @var integer
      */
     private $lft;
 
     /**
-     * @Gedmo\TreeLevel
-     * @ORM\Column(name="lvl", type="integer")
+     * @var integer
      */
     private $lvl;
 
     /**
-     * @Gedmo\TreeRight
-     * @ORM\Column(name="rgt", type="integer")
+     * @var integer
      */
     private $rgt;
 
     /**
-     * @Gedmo\TreeRoot
-     * @ORM\Column(name="root", type="integer", nullable=true)
+     * @var integer
      */
     private $root;
 
     /**
-     * @Gedmo\TreeParent
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="children")
-     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id", onDelete="SET NULL")
+     * @var integer
      */
     private $parent;
 
     /**
-     * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
-     * @ORM\OrderBy({"lft" = "ASC"})
+     * @var integer
      */
     private $children;
 

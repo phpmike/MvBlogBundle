@@ -2,35 +2,25 @@
 
 namespace Mv\BlogBundle\Entity\AdminBlog;
 
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints AS Assert;
 use Mv\BlogBundle\Validator\Constraints AS MvAssert;
 use Symfony\Component\Validator\ExecutionContext;
 
 /**
  * Comment
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Mv\BlogBundle\Entity\AdminBlog\CommentRepository")
- * @Gedmo\SoftDeleteable(fieldName="deleted")
+ * 
  * @Assert\Callback(methods={"validateIpControl"})
  */
 class Comment
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
     
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank
      * @Assert\Length({"min": 4, "max": 50})
      */
@@ -39,7 +29,6 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=200)
      * @Assert\NotBlank
      * @Assert\Email(checkHost = true)
      * @MvAssert\NoTmpMail
@@ -49,7 +38,6 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=200, nullable=true)
      * @Assert\Url
      */
     private $web;
@@ -57,7 +45,6 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=40)
      * @Assert\NotBlank
      * @Assert\Ip(version="all")
      * @MvAssert\ClientIp(groups="ip_control_group")
@@ -67,42 +54,33 @@ class Comment
     /**
      * @var string
      *
-     * @ORM\Column(type="text")
      * @Assert\NotBlank
      * @Assert\Length({"min": 10, "max": 1000})
      */
     private $comment;
     
     /**
-     * @ORM\ManyToOne(targetEntity="Post", inversedBy="comments", cascade={"persist"})
-     * @ORM\JoinColumn(nullable=false, onDelete="cascade")
+     * @var
      */
     private $post;
 
     /**
      * @var datetime $created
-     *
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
      */
     private $created;
 
     /**
      * @var datetime $publied
-     *
-     * @ORM\Column(type="datetime", nullable=true)
      */
     private $publied;
     
     /**
      * @var string
-     *
-     * @ORM\Column(type="string", length=50)
      */
     private $token;
     
     /**
-     * @ORM\Column(name="deleted", type="datetime", nullable=true)
+     * @var datetime
      */
     private $deleted;
 

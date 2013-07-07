@@ -2,32 +2,21 @@
 
 namespace Mv\BlogBundle\Entity\AdminBlog;
 
-use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints AS Assert;
 
 /**
  * Post
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Mv\BlogBundle\Entity\AdminBlog\PostRepository")
  */
 class Post
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(type="string", length=150)
      */
     private $title;
 
@@ -35,7 +24,6 @@ class Post
      * @var string
      *
      * @Assert\NotBlank()
-     * @ORM\Column(type="text")
      */
     private $accroche;
 
@@ -43,45 +31,33 @@ class Post
      * @var string
      *
      * @Assert\NotBlank()
-     * @ORM\Column(type="text")
      */
     private $article;
     
     /**
-     * @ORM\ManyToMany(targetEntity="Category", inversedBy="posts")
-     * @ORM\JoinTable(name="post_category",
-     *     joinColumns={@ORM\JoinColumn(name="post_id", referencedColumnName="id", onDelete="CASCADE")},
-     *     inverseJoinColumns={@ORM\JoinColumn(name="category_id", referencedColumnName="id", onDelete="RESTRICT")}
-     * )
+     * @var \Doctrine\Common\Collections\Collection
+     * 
      * @Assert\Count(min=1)
      */
     private $categories;
     
     /**
-     * @ORM\OneToMany(targetEntity="Comment", mappedBy="post")
+     * @var \Doctrine\Common\Collections\Collection
      */
     private $comments;
 
     /**
      * @var datetime $created
-     *
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
      */
     private $created;
 
     /**
      * @var datetime $updated
-     *
-     * @Gedmo\Timestampable(on="update")
-     * @ORM\Column(type="datetime")
      */
     private $updated;
 
     /**
      * @var datetime $publied
-     *
-     * @ORM\Column(type="datetime")
      */
     private $publied;
 

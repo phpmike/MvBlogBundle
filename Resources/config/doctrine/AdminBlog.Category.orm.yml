@@ -1,0 +1,59 @@
+Mv\BlogBundle\Entity\AdminBlog\Category:
+  type:                 entity
+  table:                null
+  repositoryClass:      Gedmo\Tree\Entity\Repository\NestedTreeRepository
+  gedmo:
+    tree:
+      type: nested
+  id:
+    id:
+      type:             integer
+      generator:
+        strategy:       AUTO
+
+  fields:
+    title:
+      type:             string
+      length:           150
+    description:
+      type:             text
+    lft:
+      type:             integer
+      gedmo:
+        - treeLeft
+    lvl:
+      type:             integer
+      gedmo:
+        - treeLevel
+    rgt:
+      type:             integer
+      gedmo:
+        - treeRight
+    root:
+      type:             integer
+      nullable:         true
+      gedmo:
+        - treeRoot
+
+  manyToMany:
+    posts:
+      targetEntity:   Mv\BlogBundle\Entity\AdminBlog\Post
+      mappedBy:       categories
+
+  manyToOne:
+    parent:
+      targetEntity:   Mv\BlogBundle\Entity\AdminBlog\Category
+      inversedBy:     children
+      joinColumn:
+        parent_id:
+          referencedColumnName: id
+        onDelete:               "SET NULL"
+      gedmo:
+        - treeParent
+
+  oneToMany:
+    children:
+      targetEntity:   Mv\BlogBundle\Entity\AdminBlog\Category
+      mappedBy:       parent
+      orderBy:
+        lft:          ASC
