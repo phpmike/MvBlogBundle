@@ -4,7 +4,7 @@ namespace Mv\BlogBundle\Entity\AdminBlog;
 
 use Symfony\Component\Validator\Constraints AS Assert;
 use Mv\BlogBundle\Validator\Constraints AS MvAssert;
-use Symfony\Component\Validator\ExecutionContext;
+use Symfony\Component\Validator\ExecutionContextInterface;
 
 /**
  * Comment
@@ -325,10 +325,10 @@ class Comment
         return $this->deleted;
     }
     
-    public function validateIpControl(ExecutionContext $ec){
+    public function validateIpControl(ExecutionContextInterface $ec){
         if(!$this->id) 
         {
-            $ec->getGraphWalker()->walkReference($this, 'ip_control_group', $ec->getPropertyPath(), true);
+            $ec->validate($this, 'ip_control_group', $ec->getPropertyPath(), true);
         }
     }
 }
