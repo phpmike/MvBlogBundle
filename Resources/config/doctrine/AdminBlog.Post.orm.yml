@@ -1,0 +1,50 @@
+Mv\BlogBundle\Entity\AdminBlog\Post:
+  type:                 entity
+  table:                null
+  repositoryClass:      Mv\BlogBundle\Entity\AdminBlog\PostRepository
+  id:
+    id:
+      type:             integer
+      generator:
+        strategy:       AUTO
+
+  fields:
+    title:
+      type:             string
+      length:           150
+    accroche:
+      type:             text
+    article:
+      type:             text
+    created:
+      type:             datetime
+      gedmo:
+        timestampable:
+          on: create
+    updated:
+      type:             datetime
+      gedmo:
+        timestampable:
+          on: update
+    publied:
+      type:             datetime
+
+  manyToMany:
+    categories:
+      targetEntity:   Mv\BlogBundle\Entity\AdminBlog\Category
+      inversedBy:     posts
+      joinTable:
+        name:         post_category
+        joinColumns:
+          post_id:
+            referencedColumnName: id
+            onDelete:             CASCADE
+        inverseJoinColumns:
+          category_id:
+            referencedColumnName: id
+            onDelete:             RESTRICT
+
+  oneToMany:
+    comments:
+      targetEntity:   Mv\BlogBundle\Entity\AdminBlog\Comment
+      mappedBy:       post

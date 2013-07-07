@@ -1,0 +1,52 @@
+Mv\BlogBundle\Entity\AdminBlog\Comment:
+  type:                 entity
+  table:                null
+  repositoryClass:      Mv\BlogBundle\Entity\AdminBlog\CommentRepository
+  gedmo:
+    soft_deleteable:
+      field_name: deleted
+  id:
+    id:
+      type:             integer
+      generator:
+        strategy:       AUTO
+
+  fields:
+    pseudo:
+      type:             string
+      length:           50
+    email:
+      type:             string
+      length:           200
+    web:
+      type:             string
+      length:           200
+      nullable:         true
+    ip:
+      type:             string
+      length:           40
+    comment:
+      type:             text
+    created:
+      type:             datetime
+      gedmo:
+        timestampable:
+          on: create
+    deleted:
+      type:             datetime
+      nullable:         true
+    publied:
+      type:             datetime
+      nullable:         true
+    token:
+      type:             string
+      length:           50
+
+  manyToOne:
+    post:
+      targetEntity:   Mv\BlogBundle\Entity\AdminBlog\Post
+      inversedBy:     comments
+      cascade:        [ persist ]
+      joinColumn:
+        nullable:     false
+        onDelete:     cascade
