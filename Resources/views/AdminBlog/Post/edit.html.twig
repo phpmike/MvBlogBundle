@@ -17,7 +17,7 @@
             {{ 'admin.back'|trans({}, 'MvBlogBundle') }}
         </a>
     </li>
-    <li><button type="button" onclick="forms.post_edit.submit();">{{ 'admin.register'|trans({}, 'MvBlogBundle') }}</button></li>
+    <li><button type="button" onclick="forms.post_edit.ckSubmit();">{{ 'admin.register'|trans({}, 'MvBlogBundle') }}</button></li>
     <li>
         <form action="{{ path('badp_post_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
@@ -26,4 +26,17 @@
         </form>
     </li>
 </ul>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+HTMLFormElement.prototype.ckSubmit = function()        {
+    for(var ck in CKEDITOR.instances)
+        {
+            document.getElementById(ck).value = CKEDITOR.instances[ck].getData();
+        }
+    HTMLFormElement.prototype.submit.apply(this, arguments);
+}
+</script>
 {% endblock %}
