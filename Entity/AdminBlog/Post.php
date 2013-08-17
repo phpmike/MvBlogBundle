@@ -4,6 +4,7 @@ namespace Mv\BlogBundle\Entity\AdminBlog;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints AS Assert;
+use Mv\BlogBundle\Tools\String;
 
 /**
  * Post
@@ -306,7 +307,7 @@ class Post
     
     public function getSlug(){
         $match = array();
-        preg_match_all('#(\b[a-z0-9]{3,}\b)#', strtolower($this->getTitle()), $match);
+        preg_match_all('#(\b[a-z0-9]{3,}\b)#', strtolower( String::withoutAccent($this->getTitle()) ), $match);
         
         if(!isset($match[1]) || !count($match[1]))
             return 'article';
