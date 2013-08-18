@@ -2,6 +2,7 @@
 
 namespace Mv\BlogBundle\Entity\AdminBlog;
 
+use Mv\BlogBundle\Tools\String;
 /**
  * Category
  * 
