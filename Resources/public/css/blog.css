@@ -57,6 +57,10 @@ DIV#mv_blog_body {
   padding: 10px 10px 10px 10px;
 }
 
+DIV#mv_blog_body pre{
+    overflow-x: auto;
+}
+
 DIV.mv_blog_accroche {
   margin-bottom: 1em;
 }
