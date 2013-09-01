@@ -19,6 +19,7 @@
     <li><button type="button" onclick="forms.comment_edit.submit();">{{ 'admin.register'|trans({}, 'MvBlogBundle') }}</button></li>
     <li>
         <form action="{{ path('badp_comment_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
             <button type="submit">{{ 'admin.remove'|trans({}, 'MvBlogBundle') }}</button>
         </form>
