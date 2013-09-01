@@ -13,6 +13,7 @@ use Mv\BlogBundle\Entity\AdminBlog\PostRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
+use Symfony\Component\HttpFoundation\Response;
 /**
  * DefaultController controller.
  *
@@ -37,6 +38,24 @@ class DefaultController extends Controller
         
         return array(
             'pagination' => $pagination,
+        );
+    }
+
+    /**
+     * @Template("MvBlogBundle:Default:rss.xml.twig")
+     */
+    public function rssAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('MvBlogBundle:AdminBlog\Post')->findAllPubliedOrdered(10);
+        
+        $response = new Response();
+        $response->headers->set('Content-Type', 'aplication/rss+xml');
+        $response->send();
+
+        return array(
+            'entities' => $entities,
         );
     }
     

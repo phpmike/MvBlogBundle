@@ -24,7 +24,9 @@ class MvBlogExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
-        
+
+        $container->setParameter('mv_blog.blog_title', $config['blog_title']);
+        $container->setParameter('mv_blog.blog_rss_description', $config['blog_rss_description']);
         $container->setParameter('mv_blog.robot_email', $config['robot_email']);  
         $container->setParameter('mv_blog.max_per_page', $config['max_per_page']);    
         $container->setParameter('mv_blog.hosts_tmp_mail', $config['hosts_tmp_mail']);

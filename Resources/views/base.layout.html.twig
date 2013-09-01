@@ -4,7 +4,7 @@ Surcharge this template in app/Resources/MvBlogBundle/views/base.layout.html.twi
 {% extends '::base.html.twig' %}
 
 {% block title %}
-    Blog
+    {{ 'mv_blog.blog_title'|parameter() }}
 {% endblock %}
     
 {% block body %}

@@ -22,6 +22,16 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('blog_title')
+                    ->defaultValue('Blog')
+                    ->info('Changer par votre titre')
+                ->end()
+                ->scalarNode('blog_rss_description')
+                    ->defaultValue('Flux RSS du blog')
+                    ->info('Changer par votre description')
+                ->end()
+            ->end()
+            ->children()
                 ->scalarNode('robot_email')
                     ->defaultValue('test@example.com')
                     ->info('Changer cette adresse par votre adresse')

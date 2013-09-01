@@ -132,6 +132,8 @@ or to have dump sql:
 
 ###9)  Blog is accessible on /blog and Admin panel on /badp
 
+RSS version is on /blog/flux.rss
+
 **If you have an error when you try to access to image management, ensure your web/bundles/mvblog/images is writable by server**
 
 Enjoy...

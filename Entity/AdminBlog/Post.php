@@ -119,6 +119,11 @@ class Post
         return $this->accroche;
     }
 
+    public function getAccrocheAsText()
+    {
+        return html_entity_decode( String::htmlToText($this->getAccroche()), ENT_QUOTES );
+    }
+
     /**
      * Set article
      *

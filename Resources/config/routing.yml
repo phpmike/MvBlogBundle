@@ -2,7 +2,12 @@ blog_homepage:
   defaults:     { _controller: "MvBlogBundle:Default:homepage" }
   pattern:      "/"
   requirements: { _method: GET }
-  
+
+blog_rss:
+  defaults:     { _controller: "MvBlogBundle:Default:rss" }
+  pattern:      "/flux.rss"
+  requirements: { _method: GET, _format: rss }
+
 blog_category_list:
   defaults:     { _controller: "MvBlogBundle:Default:category" }
   pattern:      "/{id}-{slug}/"

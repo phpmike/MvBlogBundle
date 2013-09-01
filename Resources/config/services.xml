@@ -38,6 +38,10 @@
         </service>
         <service id="mv.twig.mv_extension" class="Mv\BlogBundle\Twig\ArrayIntersectExtension">
             <tag name="twig.extension" />
-        </service>        
+        </service>
+        <service id="mv.twig.mv_extension_param" class="Mv\BlogBundle\Twig\ParameterExtension">
+            <argument type="service" id="assetic.parameter_bag" />
+            <tag name="twig.extension" />
+        </service>
     </services>
 </container>

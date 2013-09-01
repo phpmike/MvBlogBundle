@@ -5,7 +5,9 @@ doctrine:
                 class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
                 enabled: true   
 
-mv_blog:   
+mv_blog:
+    blog_title:           Blog
+    blog_rss_description: Flux RSS du blog
     # Changer cette adresse par votre adresse
     robot_email:          test@example.com 
     max_per_page:         10 

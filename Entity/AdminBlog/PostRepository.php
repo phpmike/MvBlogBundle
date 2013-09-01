@@ -18,36 +18,37 @@ class PostRepository extends EntityRepository
      * 
      * @return Criteria
      */
-    static function getOrderedCriteria(){
-        return  $criteria = Criteria::create()->orderBy(array('publied' => Criteria::DESC));
+    static function getOrderedCriteria($limit = null){
+        return  $criteria = Criteria::create()->orderBy(array('publied' => Criteria::DESC))
+                                                ->setMaxResults($limit);
     }
 
     /**
      * 
      * @return Criteria
      */
-    static function getPubliedOrderedCriteria(){
-        return self::getOrderedCriteria()->andWhere(Criteria::expr()->lte('publied', new \DateTime('now')));
+    static function getPubliedOrderedCriteria($limit = null){
+        return self::getOrderedCriteria($limit)->andWhere(Criteria::expr()->lte('publied', new \DateTime('now')));
     }
     
     /**
      * 
      * @return array
      */
-    public function findAllOrdered(){
+    public function findAllOrdered($limit = null){
         $entities = new ArrayCollection($this->findAll());
         
-        return $entities->matching(self::getOrderedCriteria())->toArray();
+        return $entities->matching(self::getOrderedCriteria($limit))->toArray();
     }
 
     /**
      * 
      * @return array
      */
-    public function findAllPubliedOrdered(){
+    public function findAllPubliedOrdered($limit = null){
         $entities = new ArrayCollection($this->findAll());
         
-        return $entities->matching(self::getPubliedOrderedCriteria())->toArray();
+        return $entities->matching(self::getPubliedOrderedCriteria($limit))->toArray();
     }
     
     public function findByCategoryPubliedOrdered($id){
