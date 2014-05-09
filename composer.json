@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.4.0@stable",
+        "symfony/symfony": "~2.5",
         "symfony/swiftmailer-bundle": "~2.3",
         "symfony/assetic-bundle": "~2.3",
         "doctrine/doctrine-bundle": "~1.2",
@@ -33,11 +33,6 @@
         "friendsofsymfony/user-bundle": "to use authentication"
     },
     "minimum-stability": "beta",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.4-dev"
-        }
-    },
     "autoload": {
         "psr-0": {
             "Mv\\BlogBundle": ""
