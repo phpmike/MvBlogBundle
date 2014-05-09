@@ -17,15 +17,15 @@ class Comment
      * @var integer
      */
     private $id;
-    
+
     /**
      * @var string
      *
      * @Assert\NotBlank
-     * @Assert\Length({"min": 4, "max": 50})
+     * @Assert\Length(min = 4, max = 50)
      */
     private $pseudo;
-    
+
     /**
      * @var string
      *
@@ -34,14 +34,14 @@ class Comment
      * @MvAssert\NoTmpMail
      */
     private $email;
-    
+
     /**
      * @var string
      *
      * @Assert\Url
      */
     private $web;
-    
+
     /**
      * @var string
      *
@@ -55,7 +55,7 @@ class Comment
      * @var string
      *
      * @Assert\NotBlank
-     * @Assert\Length({"min": 10, "max": 1000})
+     * @Assert\Length(min = 10, max = 1000)
      */
     private $comment;
     
