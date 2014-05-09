@@ -1,7 +1,7 @@
 MvBlogBundle
 ============
 
-Blog Bundle for symfony2 v2.3 (v2.2 are tagged 1.2.x and v2.1 are tagged 1.0.x)
+Blog Bundle for symfony2 v2.4 (v2.3 are tagged 1.3.x, v2.2 are tagged 1.2.x and v2.1 are tagged 1.0.x)
 
 If you're upgrading from 1.0.x, see "[UPGRADE-1.2](https://github.com/phpmike/MvBlogBundle/blob/master/Resources/Doc/UPGRADE-1.2.markdown)"
 
@@ -29,11 +29,11 @@ Features include:
 INSTALLATION with COMPOSER
 --------------------------
 
-You need have installed Symfony2 2.3 with Composer or have a composer.json file
+You need have installed Symfony2 2.4 with Composer or have a composer.json file
 
 ###1)  Add to composer.json in the root `require` key  
 
-    "mv/mv-blog-bundle": "~1.3.0@stable"
+    "mv/mv-blog-bundle": "~1.4.0@stable"
 
 **I deeply recommend to use symlinks for assets to non expose your images to be deleted**
 
