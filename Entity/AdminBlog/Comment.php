@@ -22,7 +22,7 @@ class Comment
      * @var string
      *
      * @Assert\NotBlank
-     * @Assert\Length({"min": 4, "max": 50})
+     * @Assert\Length(min= 4, max= 50)
      */
     private $pseudo;
     
@@ -55,7 +55,7 @@ class Comment
      * @var string
      *
      * @Assert\NotBlank
-     * @Assert\Length({"min": 10, "max": 1000})
+     * @Assert\Length(min= 10, max= 1000)
      */
     private $comment;
     

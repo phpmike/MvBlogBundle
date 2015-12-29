@@ -2,7 +2,7 @@
 
 namespace Mv\BlogBundle\Entity\AdminBlog;
 
-use Mv\BlogBundle\Tools\String;
+use Mv\BlogBundle\Tools\MvString;
 /**
  * Category
  * 
@@ -336,7 +336,7 @@ class Category
         if($this->getParent())
             $parent = $this->getParent()->getSlug() . '-';
         $match = array();
-        preg_match_all('#(\b[a-z0-9]{3,}\b)#', strtolower( String::withoutAccent($this->getTitle()) ), $match);
+        preg_match_all('#(\b[a-z0-9]{3,}\b)#', strtolower( MvString::withoutAccent($this->getTitle()) ), $match);
         
         if(!isset($match[1]) || !count($match[1]))
             return 'categorie';
