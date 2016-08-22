@@ -12,7 +12,8 @@ env:
   - SYMFONY_VERSION=v2.2
 
 before_script:
+    - phpenv config-rm xdebug.ini
     - curl -s http://getcomposer.org/installer | php
-    - php composer.phar install
+    - php -d memory_limit=2G composer.phar install
 
 script: phpunit
